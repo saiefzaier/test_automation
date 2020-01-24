@@ -35,6 +35,8 @@ public class ConfigBasiqueWebDriver {
         optionsF.addArguments("--disable-gpu");
 
         ChromeOptions optionsC = new ChromeOptions();
+        optionsC.addArguments("--headless");
+        optionsC.addArguments("--window-size=1920,1080");
         optionsC.addArguments("start-maximized");
         optionsC.addArguments("enable-automation");
         optionsC.addArguments("--no-sandbox");
