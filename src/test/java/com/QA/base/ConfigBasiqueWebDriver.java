@@ -57,7 +57,7 @@ public class ConfigBasiqueWebDriver {
 
             switch (System.getProperty("browser")) {
 
-                case "Chrome":
+                case "chrome":
                     logger.info("Lancement d'un navigateur chrome dans un docker container ");
                     optionsC.addArguments("--window-size=1920,1080");
                     driver = new RemoteWebDriver(grid, optionsC);
