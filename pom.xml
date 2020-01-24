@@ -283,7 +283,7 @@
                     <logLevel>minimal</logLevel>
                     <customParameters>
                         <Titre_>Rapport récapitulatif des tests de validation fonctionnelle</Titre_>
-                        <Plateforme_de_test>https://accretio-2-tnr.advyteam.com</Plateforme_de_test>
+                        <Plateforme_de_test>https://accretio-2-tnr-auto.advyteam.com</Plateforme_de_test>
                     </customParameters>
                 </configuration>
             </plugin>
