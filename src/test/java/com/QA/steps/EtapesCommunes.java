@@ -313,7 +313,7 @@ public class EtapesCommunes {
     @Then("vérifier que le message {string} s affiche")
     public void vérifierQueLeMessageSAffiche(String textenotification) {
         logger.info("Vérification de l'affichage du message : " + textenotification);
-        WebElement modules = (new WebDriverWait(driver, 10))
+        WebElement modules = (new WebDriverWait(driver, 100))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(CommonLocators.Notification_Simple)));
         Assert.assertTrue(driver.findElement(By.cssSelector(CommonLocators.Notification_Simple)).getText().contains(textenotification));
 

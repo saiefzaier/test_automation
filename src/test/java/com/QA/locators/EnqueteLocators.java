@@ -4,7 +4,7 @@ public class EnqueteLocators {
 
     public static final String Bouton_Ajouter_Enquete = "/html/body/app-root/app-layout/div/section/div/acc-connect-satisfaction-survey-container/div/button";
     public static final String Libelle_Enquete_Modification="/html/body/ngb-modal-window/div/div/acc-satisfaction-survey-form/form/div[2]/div/div/div/section/div[2]/div[1]/input";
-    public static final String Libelle_Enquete_Creation="/html/body/ngb-modal-window/div/div/acc-satisfaction-survey-form/form/div[2]/div/div/div/section/div[2]/div[1]/input";
+    public static final String Libelle_Enquete_Creation="/html/body/ngb-modal-window/div/div/acc-satisfaction-survey-form/div/form/div[2]/div/div/div/section/div[2]/div[1]/input";
     public static final String Population_Enquete="/html/body/ngb-modal-window/div/div/acc-satisfaction-survey-form/form/div[2]/div/div/div/section/div[2]/div[3]/div/acc-select-population/div/div[1]/input";
     public static final String Reponse_1_enquete="/html/body/ngb-modal-window/div/div/acc-satisfaction-survey-form/form/div[2]/div/div/div/section/div[3]/div[2]/div[1]/div/div[1]/div/div[2]/div/input";
     public static final String Reponse_2_enquete="/html/body/ngb-modal-window/div/div/acc-satisfaction-survey-form/form/div[2]/div/div/div/section/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/input";
