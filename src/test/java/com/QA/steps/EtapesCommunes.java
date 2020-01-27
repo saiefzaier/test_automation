@@ -123,16 +123,16 @@ public class EtapesCommunes {
         } else if (Character.toString(locator.charAt(0)).contains("/")) {
             WebElement element = driver.findElement(By.xpath(locator));
             actions.moveToElement(element).perform();
-            WebElement modules = (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(element));
+            WebElement modules = (new WebDriverWait(driver, 100)).until(ExpectedConditions.elementToBeClickable(element));
             element.click();
         } else if (locator.contains("[") || Character.toString(locator.charAt(0)).contains(".")) {
             WebElement element = driver.findElement(By.cssSelector(locator));
             actions.moveToElement(element).perform();
-            WebElement modules = (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(element));
+            WebElement modules = (new WebDriverWait(driver, 100)).until(ExpectedConditions.elementToBeClickable(element));
             element.click();
         } else {
             WebElement element = driver.findElement(By.id(locator));
-            WebElement modules = (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(element));
+            WebElement modules = (new WebDriverWait(driver, 100)).until(ExpectedConditions.elementToBeClickable(element));
             element.click();
         }
 
@@ -187,13 +187,13 @@ public class EtapesCommunes {
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", element);
         } else if (Character.toString(locator.charAt(0)).contains("/")) {
-            WebElement modules = (new WebDriverWait(driver, 7)).until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+            WebElement modules = (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
             driver.findElement(By.xpath(locator)).click();
         } else if (locator.contains("[") || Character.toString(locator.charAt(0)).contains(".")) {
-            WebElement modules = (new WebDriverWait(driver, 7)).until(ExpectedConditions.elementToBeClickable(By.cssSelector(locator)));
+            WebElement modules = (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(By.cssSelector(locator)));
             driver.findElement(By.cssSelector(locator)).click();
         } else {
-            WebElement modules = (new WebDriverWait(driver, 7)).until(ExpectedConditions.elementToBeClickable(By.id(locator)));
+            WebElement modules = (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(By.id(locator)));
             driver.findElement(By.id(locator)).click();
         }
 
