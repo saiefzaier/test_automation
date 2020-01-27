@@ -131,7 +131,7 @@ public class ConfigBasiqueWebDriver {
                 case "firefox":
                     logger.info("Lancement d'un navigateur firefox pour les tests");
                     if (System.getProperty("os.name").toLowerCase().contains("wind")) {
-                        System.setProperty("webdriver.firefox.driver", streams.readers().getProperty("FirefoxDriverPath"));
+                        System.setProperty("webdriver.gecko.driver", streams.readers().getProperty("FirefoxDriverPath"));
                         driver = new FirefoxDriver(optionsF);
                     } else {
                         WebDriverManager.firefoxdriver().setup();
