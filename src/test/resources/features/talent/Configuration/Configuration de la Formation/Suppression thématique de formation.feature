@@ -6,8 +6,8 @@
 
 @ACCRETIO2
 @ACCRETIO2-TALENT
-@ACCRETIO2-CONFIGURATION
-@ACCRETIO2-CONFIGURATION-0009
+@ACCRETIO2-CONFIGURATIONTALENT
+@ACCRETIO2-CONFIGURATIONTALENT-0009
 
 Feature: Configuration
 
@@ -21,19 +21,30 @@ Feature: Configuration
 
     #Etape 002: Acceder  au sous module configuration
 
-     When   l utilisateur clique sur "Bouton_menu_etendu"
-      And   l utilisateur clique sur "Module_Talent"
-      And   l utilisateur clique sur "Sous_module_Configuration"
+     When l utilisateur clique sur "Bouton_Role_RH"
+     And   l utilisateur clique sur "Bouton_Menu_Etendu"
+     And   l utilisateur clique sur "Module_Talent"
+     And   l utilisateur clique sur "Sous_module_Configuration_Talent"
+     And   l utilisateur clique sur "Bouton_Formations_Talent"
+     And   l utilisateur clique sur "Bouton_Formations_Thematique_Talent"
 
     #Ajout de la thématique
 
-      And   l utilisateur saisit "Test Ajout thématique Auto 3" dans le champs "Ajout_occurrence_thematique_conf"
-      And   l utilisateur clique sur "Ajouter_thematique_conf"
+      #And   l utilisateur saisit "Test Ajout thématique Auto 3" dans le champs "Ajout_occurrence_thematique_conf"
+      #And   l utilisateur clique sur "Ajouter_thematique_conf"
+
+      And l utilisateur ajoute la thematique"Test Ajout thématique Auto 3"
+      And wait 3000
       And   l utilisateur clique sur "Sauvegarder_thematique"
-     Then   vérifier que le message "succès" s affiche
+      Then   vérifier que le message "Opération effectuée avec succès" s affiche
       And   verifier que la thematique "Test Ajout thématique Auto 3" est dans la liste
+      And wait 3000
+
    #Suppression de la thématique
-     When   l utilisateur clique sur "Supprimer_Test_Ajout_thématique_Auto_3"
-      And   l utilisateur clique sur "Sauvegarder_thematique"
-     Then   vérifier que le message "succès" s affiche
-      And   verifier que la thematique "Test Ajout thématique Auto 3" n est plus dans la liste
+
+     When   l utilisateur supprime la derniere thematique ajoutee
+     And wait 3000
+     And   l utilisateur clique sur "Sauvegarder_thematique"
+     Then   vérifier que le message "Opération effectuée avec succès" s affiche
+     And wait 3000
+     And   verifier que la thematique "Test Ajout thématique Auto 3" n est plus dans la liste
