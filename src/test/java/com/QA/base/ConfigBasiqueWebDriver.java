@@ -4,6 +4,7 @@ package com.QA.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -60,14 +61,24 @@ public class ConfigBasiqueWebDriver {
                 case "chrome":
                     logger.info("Lancement d'un navigateur chrome dans un docker container ");
                     optionsC.addArguments("--window-size=1920,1080");
-                    driver = new RemoteWebDriver(grid, optionsC);
+                    while (driver == null){
+                        try {
+                        driver = new RemoteWebDriver(grid, optionsC);
+                        }
+                        catch (WebDriverException ignored) {logger.info("attente d'une nouvelle session du navigateur chrome");}
+                    }
                     ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
                     break;
 
                 case "firefox":
                     logger.info("Lancement d'un navigateur firefox dans un docker container ");
                     optionsF.addArguments("--window-size=1920,1080");
-                    driver = new RemoteWebDriver(grid, optionsF);
+                    while (driver == null){
+                        try {
+                            driver = new RemoteWebDriver(grid, optionsF);
+                        }
+                        catch (WebDriverException ignored) {logger.info("attente d'une nouvelle session du navigateur firefox");}
+                    }
                     ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
                     break;
 
@@ -83,7 +94,12 @@ public class ConfigBasiqueWebDriver {
                     optionsCh.addArguments("--disable-browser-side-navigation");
                     optionsCh.addArguments("--disable-gpu");
                     logger.info("Lancement d'un navigateur chrome en mode Headless dans un docker container");
-                    driver = new RemoteWebDriver(grid, optionsCh);
+                    while (driver == null){
+                        try {
+                            driver = new RemoteWebDriver(grid, optionsCh);
+                        }
+                        catch (WebDriverException ignored) {logger.info("attente d'une nouvelle session du navigateur chrome en mode headless");}
+                    }
                     break;
 
                 default:
