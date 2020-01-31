@@ -311,10 +311,12 @@ public class EtapesCommunes {
     }
 
     @Then("vérifier que le message {string} s affiche")
-    public void vérifierQueLeMessageSAffiche(String textenotification) {
+    public void vérifierQueLeMessageSAffiche(String textenotification) throws InterruptedException {
         logger.info("Vérification de l'affichage du message : " + textenotification);
-        WebElement modules = (new WebDriverWait(driver, 100))
+        WebElement modules = (new WebDriverWait(driver, 200))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(CommonLocators.Notification_Simple)));
+
+        action.pause(driver,1500);
         Assert.assertTrue(driver.findElement(By.cssSelector(CommonLocators.Notification_Simple)).getText().contains(textenotification));
 
     }

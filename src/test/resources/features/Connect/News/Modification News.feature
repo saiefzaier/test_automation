@@ -33,7 +33,7 @@ Feature: News
     And l'utilisateur selectionne la date actuelle du champ date de publication
     And  l utilisateur upload "une image" dans le champs "Upload_Image_News"
     And wait 3000
-    And l utilisateur clique sur "Bouton_Enregistrer_Redimensionner_Image"
+    And l utilisateur clique sur "JS_Bouton_Enregistrer_Redimensionner_Image"
     And wait 2000
     And l utilisateur clique sur "Bouton_Sauvegarde_Creation_News"
 
