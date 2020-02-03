@@ -2,7 +2,7 @@ selenium-hub:
   restart: always
   image: selenium/hub:latest
   ports:
-    - "4444:4444"
+    - "4445:4444"
     
 
 selenium-chrome-1:
