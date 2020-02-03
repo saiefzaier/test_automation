@@ -21,7 +21,6 @@ Feature: Timeline
     #Etape 2 : Upload fichier
 
     And  l utilisateur upload "une image" dans le champs "Champ_Input_Video_Publication"
-    And wait 2000
 
     #Etape 3 : Vérifier que l'upload est possible
 

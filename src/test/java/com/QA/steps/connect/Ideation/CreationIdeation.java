@@ -40,7 +40,7 @@ public class CreationIdeation {
                 .until(ExpectedConditions.refreshed(ExpectedConditions.attributeToBe(By.xpath(IdeationLocators.Libelle_Premiere_Idee_Affichee), "innerText", str1)));
 
         Boolean modules2 = (new WebDriverWait(driver, 100))
-                .until(ExpectedConditions.attributeToBe(By.xpath(IdeationLocators.Description_Premiere_Idee_Affichee), "innerText", str2));
+                .until(ExpectedConditions.refreshed(ExpectedConditions.attributeToBe(By.xpath(IdeationLocators.Description_Premiere_Idee_Affichee), "innerText", str2)));
 
         String str3 = driver.findElement(By.xpath(IdeationLocators.Libelle_Premiere_Idee_Affichee)).getAttribute("innerText");
         String str4 = driver.findElement(By.xpath(IdeationLocators.Description_Premiere_Idee_Affichee)).getAttribute("innerText");
