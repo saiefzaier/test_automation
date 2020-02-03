@@ -35,10 +35,7 @@ public class ModificationAnnonce {
 
 
 
-    @And("l'utilisateur rafraichit la page")
-    public void lUtilisateurRafraichitLaPage() {
-        driver.navigate().refresh();
-    }
+
 
 
 
