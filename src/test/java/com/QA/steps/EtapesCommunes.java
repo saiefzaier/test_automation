@@ -13,6 +13,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -316,7 +317,7 @@ public class EtapesCommunes {
         WebElement modules = (new WebDriverWait(driver, 300))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(CommonLocators.Notification_Simple)));
 
-        action.pause(driver,1500);
+        action.pause(driver, 1500);
         Assert.assertTrue(driver.findElement(By.cssSelector(CommonLocators.Notification_Simple)).getText().contains(textenotification));
 
     }
@@ -473,23 +474,23 @@ public class EtapesCommunes {
                 break;
             }
         }
-            if (!driver.findElement(By.xpath(locator)).getAttribute("innerTexte").equals(valeur)) {
-                driver.findElement(By.xpath(locator)).click();
-                String emplacement2 = "Sauvegarde_" +emplacement;
-                locator = "vide";
-                for (List<Field> f : ListeGlobaleLocators) {
-                    for (Field x : f) {
-                        if (x.getName().equals(emplacement2)) {
-                            locator = (String) x.get(x);
-                            break;
-                        }
-                    }
-                    if (!locator.equals("vide")) {
+        if (!driver.findElement(By.xpath(locator)).getAttribute("innerTexte").equals(valeur)) {
+            driver.findElement(By.xpath(locator)).click();
+            String emplacement2 = "Sauvegarde_" + emplacement;
+            locator = "vide";
+            for (List<Field> f : ListeGlobaleLocators) {
+                for (Field x : f) {
+                    if (x.getName().equals(emplacement2)) {
+                        locator = (String) x.get(x);
                         break;
                     }
                 }
-                driver.findElement(By.xpath(locator)).click();
+                if (!locator.equals("vide")) {
+                    break;
+                }
             }
+            driver.findElement(By.xpath(locator)).click();
+        }
 
     }
 
