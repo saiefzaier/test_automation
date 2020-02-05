@@ -3,6 +3,7 @@ package com.QA.base;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,11 +16,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
 
 public class ConfigBasiqueWebDriver {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(ConfigBasiqueWebDriver.class));
+    private static final Logger logger = Logger.getLogger(ConfigBasiqueWebDriver.class);
     private static WebDriver driver = null;
 
 
@@ -103,7 +103,7 @@ public class ConfigBasiqueWebDriver {
                     break;
 
                 default:
-                    logger.warning("le choix du navigateur n'est pas correct");
+                    logger.error("le choix du navigateur n'est pas correct");
 
             }
 
