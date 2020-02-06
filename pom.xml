@@ -21,7 +21,7 @@
         <tags>@no-tag-specified</tags>
         <cucumber.version>1.2.5</cucumber.version>
         <selenium.version>3.141.59</selenium.version>
-        <webdrivermanager>3.7.1</webdrivermanager>
+        <webdrivermanager>3.8.1</webdrivermanager>
         <buildName></buildName>
     </properties>
 
@@ -171,16 +171,7 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager}</version>
-            <scope>compile</scope>
         </dependency>
-
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager}</version>
-            <scope>test</scope>
-        </dependency>
-
 
     </dependencies>
 
