@@ -86,7 +86,7 @@ Feature: Absences
     And l utilisateur selectionne "à 0,01 près" dans la liste deroulante "Voisinage_Ajout_Règle"
     And l utilisateur selectionne "La plus proche" dans la liste deroulante "Valeur_Ajout_Règle"
     And l utilisateur clique sur "Bouton_Valider_Ajout_Règle"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
 
    #Etape 4 : Profil Rh-Création du motif d'absence renfermant le processus de validation "Validation N+1" selectionné au niveau du motif d'absence
 
@@ -108,7 +108,7 @@ Feature: Absences
     And l utilisateur selectionne "Congé Payé" dans la liste deroulante "Règle_Affectation_Population_Motif_Abcence"
     And l utilisateur selectionne "Jours ouvrés" dans la liste deroulante "Type_du_calendrier_Affectation_Population_Motif_Abcence"
     And l utilisateur clique sur "Bouton_Valider_affectation"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And l utilisateur se deconnecte
 
     #Etape 5 : Profil collaborateur-Ajout de demande d'absence
@@ -120,7 +120,7 @@ Feature: Absences
     # And l utilisateur selectionne "Mehrez Somrani" dans la liste deroulante "Backup_Ajout_Demande_Absence_Collaborateur"
     And l'utilisateur upload un justificatif
     And l utilisateur clique sur "Bouton_Envoyer_Ajout_Demande_Absence_Collaborateur"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And vérifier que le statut de la demande devient En cours
     And l utilisateur se deconnecte
 
@@ -132,7 +132,7 @@ Feature: Absences
     And l utilisateur clique sur "Bouton_Accepter_Demande_Absence"
     And la fenêtre de confirmation de validation de la demande d'absence s'affiche à l'écran
     And l utilisateur clique sur "Bouton_Valider_Acceptation"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And Vérifier que la demande d'absence est déplacée au niveau de la rubrique Historique et que son statut devient Validée
 
    #Etape 7 : Profil collaborateur-Vérification de la validation de la demande d'absence
@@ -144,7 +144,7 @@ Feature: Absences
     And l utilisateur clique sur "Bouton_Annuler_Demande_Absence"
     And la fenêtre de confirmation de l'annulation de la demande d'absence s'affiche à l'écran
     And l utilisateur clique sur "Bouton_Valider_Annulation"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
 
     #Etape 9 : Profil manager-Validation de l'annulation de la demande d'absence
     And l'utilisateur "marcil.valentine@yopmail.com" est connecté
@@ -153,7 +153,7 @@ Feature: Absences
     And l utilisateur clique sur "Bouton_Accepter_Demande_Annulation"
     And la fenêtre de confirmation de validation de l'annulation de la demande d'absence s'affiche à l'écran
     And l utilisateur clique sur "Bouton_Confirmation_Validation_Demande_Annulation"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And Vérifier que la demande d'absence est déplacée au niveau de la rubrique Historique et que son statut devient Annulée
 
    #Etape 10 : Profil collaborateur-Vérification de la validation de l'annulation de la demande d'absence

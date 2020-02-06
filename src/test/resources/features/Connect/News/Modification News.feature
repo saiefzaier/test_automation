@@ -48,5 +48,5 @@ Feature: News
 
     # Etape 5 : Vérification enregistrement correct de la modification
 
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     Then verifier que la modification a été enregistrée

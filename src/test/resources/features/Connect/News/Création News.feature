@@ -40,7 +40,7 @@ Feature: News
 
     #Etape 4 : Vérification de la création de la News
 
-    Then vérifier que le message "Opération effectuée avec succés" s affiche
+    Then vérifier que le message "Opération effectuée avec succès" s affiche
     Then vérifier la création de la nouvelle news
 
 

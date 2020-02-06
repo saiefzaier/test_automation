@@ -86,7 +86,7 @@ Feature: Absences
     And l utilisateur selectionne "à 0,01 près" dans la liste deroulante "Voisinage_Ajout_Règle"
     And l utilisateur selectionne "La plus proche" dans la liste deroulante "Valeur_Ajout_Règle"
     And l utilisateur clique sur "Bouton_Valider_Ajout_Règle"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
 
     #Etape 4 : Profil Rh-Création du motif d'absence renfermant le processus de validation "Validation N+1" selectionné au niveau du motif d'absence
 
@@ -109,7 +109,7 @@ Feature: Absences
      # Choisir au niveau du paramétrage jours calendaires
     And l utilisateur selectionne "Jours calendaires" dans la liste deroulante "Type_du_calendrier_Affectation_Population_Motif_Abcence"
     And l utilisateur clique sur "Bouton_Valider_affectation"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And l utilisateur se deconnecte
 
     #Etape 5 : Profil collaborateur-Ajout de demande d'absence
@@ -121,7 +121,7 @@ Feature: Absences
     # And l utilisateur selectionne "Mehrez Somrani" dans la liste deroulante "Backup_Ajout_Demande_Absence_Collaborateur"
     And l'utilisateur upload un justificatif
     And l utilisateur clique sur "Bouton_Envoyer_Ajout_Demande_Absence_Collaborateur"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And vérifier que le statut de la demande devient En cours
     # Vérification de la durée
     And Vérifier que le champ Durée a la valeur 3 jour(s)
@@ -134,7 +134,7 @@ Feature: Absences
     And l utilisateur clique sur "Bouton_Accepter_Demande_Absence_Manager"
     And vérifier que le titre du modal est "Confirmation de la validation" et le texte du corps du modal est "Voulez vous vraiment valider cette demande ?"
     And l utilisateur clique sur "JS_Bouton_Valider_Acceptation"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     # Vérification de la durée
     Then Vérifier que le champ Durée a la valeur 3 jour(s)
     And l utilisateur se deconnecte
@@ -165,7 +165,7 @@ Feature: Absences
      # Choisir au niveau du paramétrage jours ouvrables
     And l utilisateur selectionne "Jours ouvrables" dans la liste deroulante "Type_du_calendrier_Affectation_Population_Motif_Abcence"
     And l utilisateur clique sur "Bouton_Valider_affectation"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And l utilisateur se deconnecte
 
     #Etape 8 : Profil collaborateur-Ajout de demande d'absence
@@ -177,7 +177,7 @@ Feature: Absences
     # And l utilisateur selectionne "Mehrez Somrani" dans la liste deroulante "Backup_Ajout_Demande_Absence_Collaborateur"
     And l'utilisateur upload un justificatif
     And l utilisateur clique sur "Bouton_Envoyer_Ajout_Demande_Absence_Collaborateur"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And vérifier que le statut de la demande devient En cours
     # Vérification de la durée
     And Vérifier que le champ Durée a la valeur 2 jour(s)
@@ -190,7 +190,7 @@ Feature: Absences
     And l utilisateur clique sur "Bouton_Accepter_Demande_Absence_Manager"
     And vérifier que le titre du modal est "Confirmation de la validation" et le texte du corps du modal est "Voulez vous vraiment valider cette demande ?"
     And l utilisateur clique sur "JS_Bouton_Valider_Acceptation"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     # Vérification de la durée
     Then Vérifier que le champ Durée a la valeur 2 jour(s)
     And l utilisateur se deconnecte
@@ -221,7 +221,7 @@ Feature: Absences
      # Choisir au niveau du paramétrage jours ouvrables
     And l utilisateur selectionne "Jours ouvrés" dans la liste deroulante "Type_du_calendrier_Affectation_Population_Motif_Abcence"
     And l utilisateur clique sur "Bouton_Valider_affectation"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And l utilisateur se deconnecte
 
     #Etape 11 : Profil collaborateur-Ajout de demande d'absence
@@ -233,7 +233,7 @@ Feature: Absences
     # And l utilisateur selectionne "Mehrez Somrani" dans la liste deroulante "Backup_Ajout_Demande_Absence_Collaborateur"
     And l'utilisateur upload un justificatif
     And l utilisateur clique sur "Bouton_Envoyer_Ajout_Demande_Absence_Collaborateur"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And vérifier que le statut de la demande devient En cours
     # Vérification de la durée
     And Vérifier que le champ Durée a la valeur 1 jour(s)
@@ -246,6 +246,6 @@ Feature: Absences
     And l utilisateur clique sur "Bouton_Accepter_Demande_Absence_Manager"
     And vérifier que le titre du modal est "Confirmation de la validation" et le texte du corps du modal est "Voulez vous vraiment valider cette demande ?"
     And l utilisateur clique sur "JS_Bouton_Valider_Acceptation"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     # Vérification de la durée
     Then Vérifier que le champ Durée a la valeur 1 jour(s)

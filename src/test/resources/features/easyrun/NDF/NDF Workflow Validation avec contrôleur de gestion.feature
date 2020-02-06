@@ -28,7 +28,7 @@ Feature: NDF
     And l utilisateur saisit "Test de NDF" dans le champs "Libellé"
     And l utilisateur selectionne "Divers" dans la liste deroulante "Catégorie"
     And l utilisateur clique sur "Bouton_Ajouter"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
 
     #Etape 2 : Profil Rh-Paramétrage de note de frais afin d'inclure le contrôleur de gestion dans le workflow
     And l utilisateur clique sur "Bouton_Menu_Etendu"
@@ -37,7 +37,7 @@ Feature: NDF
     And l utilisateur clique sur "Onglet_Paramétrage"
     And l'utilisateur sélectionne la valeur "Oui" au niveau du champ "Validation des notes de frais par le contrôleur de gestion
     And l utilisateur clique sur "Bouton_Enregistrer"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
 
     #Etape 3 : Profil collaborateur-Ajout de NDF
     And l'utilisateur "haf01.collaborateur@gmail.com" est connecté
@@ -56,11 +56,11 @@ Feature: NDF
     And l utilisateur saisit "100" dans le champs "Montant(TTC)"
     And l utilisateur selectionne "Espèces" dans la liste deroulante "Mode de paiement"
     And l utilisateur clique sur "Bouton_Ajouter"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And l utilisateur clique sur "Bouton_Envoyer_NDF"
     And la fenêtre de confirmation de soumission de la NDF s'affiche à l'écran
     And l utilisateur clique sur "Bouton_Valider"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And la référence de NDF est crée et le statut de la NDF devient En cours
 
     #Etape 4 : Profil manager-Validation de NDF
@@ -71,7 +71,7 @@ Feature: NDF
     And l utilisateur clique sur "Bouton_Accepter"
     And la fenêtre de confirmation de la validation d'affiche à l'écran
     And l utilisateur clique sur "Bouton_Valider"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And la NDF est déplacée au niveau de la rubrique Historique et son statut devient Validée
 
 
@@ -85,7 +85,7 @@ Feature: NDF
     And l utilisateur clique sur "Bouton_Accepter"
     And la fenêtre de confirmation de la validation d'affiche à l'écran
     And l utilisateur clique sur "Bouton_Valider"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And la NDF est déplacée au niveau de la rubrique Historique et son statut devient Contrôlée
 
     #Etape 6 : Profil Financier-Validation de NDF
@@ -98,7 +98,7 @@ Feature: NDF
     And l utilisateur clique sur "Bouton_Accepter"
     And la fenêtre de confirmation de la validation d'affiche à l'écran
     And l utilisateur clique sur "Bouton_Valider"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And la NDF est déplacée au niveau de la rubrique Historique et son statut devient Payée
 
     #Etape 7 : Profil collaborateur-Vérification de la validation de la NDF

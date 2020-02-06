@@ -84,7 +84,7 @@ Feature: Absences
     And l utilisateur selectionne "à 0,01 près" dans la liste deroulante "Voisinage_Ajout_Règle"
     And l utilisateur selectionne "La plus proche" dans la liste deroulante "Valeur_Ajout_Règle"
     And l utilisateur clique sur "Bouton_Valider_Ajout_Règle"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
 
     #Etape 4 : Profil Rh-Création du motif d'absence renfermant le processus de validation "Validation N+1 et Rh" selectionné au niveau du motif d'absence
 
@@ -106,7 +106,7 @@ Feature: Absences
     And l utilisateur selectionne "Congé Payé" dans la liste deroulante "Règle_Affectation_Population_Motif_Abcence"
     And l utilisateur selectionne "Jours ouvrés" dans la liste deroulante "Type_du_calendrier_Affectation_Population_Motif_Abcence"
     And l utilisateur clique sur "Bouton_Valider_affectation"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And l utilisateur se deconnecte
 
     #Etape 5 : Profil collaborateur-Ajout de demande d'absence
@@ -118,7 +118,7 @@ Feature: Absences
     # And l utilisateur selectionne "Mehrez Somrani" dans la liste deroulante "Backup_Ajout_Demande_Absence_Collaborateur"
     And l'utilisateur upload un justificatif
     And l utilisateur clique sur "Bouton_Envoyer_Ajout_Demande_Absence_Collaborateur"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And vérifier que le statut de la demande devient En cours
     And l utilisateur se deconnecte
 
@@ -129,7 +129,7 @@ Feature: Absences
     And l utilisateur clique sur "Bouton_Accepter_Demande_Absence_Manager"
     And vérifier que le titre du modal est "Confirmation de la validation" et le texte du corps du modal est "Voulez vous vraiment valider cette demande ?"
     And l utilisateur clique sur "JS_Bouton_Valider_Acceptation"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And l utilisateur se deconnecte
 
     #Etape 7 : Profil rh-Rejet de demande d'absence
@@ -144,7 +144,7 @@ Feature: Absences
     And la fenêtre de confirmation de rejet de la demande d'absence s'affiche à l'écran
     And l utilisateur saisit "Rejet" dans le champs "Commentaire"
     And l utilisateur clique sur "Bouton_Valider_rejet"
-    And vérifier que le message "Opération effectuée avec succés" s affiche
+    And vérifier que le message "Opération effectuée avec succès" s affiche
     And Vérifier que la demande d'absence est déplacée au niveau de la rubrique Historique et que son statut devient Rejetée
     And l utilisateur se deconnecte
 
