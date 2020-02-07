@@ -21,9 +21,10 @@ public class ConfigBasiqueWebDriver {
 
     private static final Logger logger = Logger.getLogger(ConfigBasiqueWebDriver.class);
     private static WebDriver driver = null;
+    private static Throwable WebDriverException;
 
 
-    public static WebDriver get() {
+    public static WebDriver get() throws Throwable {
 
 
         FirefoxOptions optionsF = new FirefoxOptions();
@@ -59,13 +60,14 @@ public class ConfigBasiqueWebDriver {
             switch (System.getProperty("browser")) {
 
                 case "chrome":
-                    logger.info("Lancement d'un navigateur chrome dans un docker container ");
+                    logger.info("Lancement d'un navigateur chrome dans un docker container");
                     optionsC.addArguments("--window-size=1920,1080");
+                    logger.info("attente d'une nouvelle session du navigateur chrome");
                     while (driver == null){
                         try {
                         driver = new RemoteWebDriver(grid, optionsC);
                         }
-                        catch (WebDriverException ignored) {logger.info("attente d'une nouvelle session du navigateur chrome");}
+                        catch (WebDriverException ignored) {}
                     }
                     ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
                     break;
@@ -73,11 +75,12 @@ public class ConfigBasiqueWebDriver {
                 case "firefox":
                     logger.info("Lancement d'un navigateur firefox dans un docker container ");
                     optionsF.addArguments("--window-size=1920,1080");
+                    logger.info("attente d'une nouvelle session du navigateur firefox");
                     while (driver == null){
                         try {
                             driver = new RemoteWebDriver(grid, optionsF);
                         }
-                        catch (WebDriverException ignored) {logger.info("attente d'une nouvelle session du navigateur firefox");}
+                        catch (WebDriverException ignored) {}
                     }
                     ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
                     break;
@@ -94,17 +97,18 @@ public class ConfigBasiqueWebDriver {
                     optionsCh.addArguments("--disable-browser-side-navigation");
                     optionsCh.addArguments("--disable-gpu");
                     logger.info("Lancement d'un navigateur chrome en mode Headless dans un docker container");
+                    logger.info("attente d'une nouvelle session du navigateur chrome en mode headless");
                     while (driver == null){
                         try {
                             driver = new RemoteWebDriver(grid, optionsCh);
                         }
-                        catch (WebDriverException ignored) {logger.info("attente d'une nouvelle session du navigateur chrome en mode headless");}
+                        catch (WebDriverException ignored) {}
                     }
                     break;
 
                 default:
                     logger.error("le choix du navigateur n'est pas correct");
-
+                    throw WebDriverException;
             }
 
         } else if (System.getProperty("RemoteInDocker").equalsIgnoreCase("false")) {

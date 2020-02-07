@@ -29,7 +29,7 @@ public class SondageLocators {
     public static final String Bouton_Confirmer_Supprimer_Sondage="/html/body/ngb-modal-window/div/div/acc-confirmation-modal/div[3]/button[1]";
     public static final String Liste_Sondage_Afficher="//*[@id=\"actuality\"]/acc-right-side-tabs-actuality-component/div/div/div";
     public static final String Champ_Date_Sondage="//*[@id=\"popup\"]/div[1]/section[2]/div[2]/div[1]/section/div/div/acc-date-picker/my-date-picker/div/div/input";
-    public static final String Champ_Heure_Fin_Sondage="//*[@id=\"popup\"]/div[1]/section[2]/div[2]/div[1]/section/div/div/timepicker/table/tbody/tr[2]/td[1]/input";
+    public static final String Champ_Heure_Fin_Sondage="//*[@id=\"popup\"]/div[1]/section[2]/div[2]/div[1]/section/div/div/div[1]/timepicker/table/tbody/tr[2]/td[1]/input";
     public static final String Bouton_Format_Horaire_Sondage="//*[@id=\"popup\"]/div[1]/section[2]/div[2]/div[1]/section/div/div/timepicker/table/tbody/tr[2]/td[3]/button";
     public static final String Sondage_JoursRestants_Afficher="//*[@id=\"sondages\"]/acc-portal-survey/div[2]/div/div/i";
     public static final String Bouton_Reponse_1_Sondage_Portail="//*[@id=\"sondages\"]/acc-portal-survey/div[2]/span[2]/span[1]/span/label/span";
