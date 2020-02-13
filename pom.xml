@@ -23,6 +23,8 @@
         <selenium.version>3.141.59</selenium.version>
         <webdrivermanager>3.8.1</webdrivermanager>
         <buildName></buildName>
+        <TO>zied.bensaber@advyteam.com</TO>
+        <CC>wael.boufaden@advyteam.com</CC>
     </properties>
 
     <dependencies>
