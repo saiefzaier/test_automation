@@ -30,6 +30,7 @@ Feature: Timeline
       #Etape 3 : Ajout commentaire avec tag sur le statut
     
     When l utilisateur saisit "@Gilles Guimond" dans le champs "Champs_Input_Commentaire"
+    And wait 5000
     And l utilisateur choisit le profil du tag du commentaire dans la liste
     And l utilisateur clique sur "JS_Bouton_Submit_Commentaire"
 

@@ -43,7 +43,7 @@ Feature: Enquete
 
     And l utilisateur clique sur "Bouton_Lancer_Enquete"
     And l utilisateur clique sur "Bouton_Confirmer_Lancer_Enquete"
-    And   wait 5000
+    And   wait 8000
 
     #Etape5 : Cloturer une enquete
 
