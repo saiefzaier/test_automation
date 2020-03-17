@@ -29,7 +29,7 @@ Feature: Référentiels
     And l utilisateur saisit "SOC02" dans le champs "Code_société"
     And l utilisateur saisit "Société de service" dans le champs "Libellé_société"
     And l utilisateur saisit "01/01/2019" dans le champs "Date_d_effet_société"
-    And l utilisateur selectionne "Arabe" dans la liste deroulante "langue_officielle_société"
+    And l utilisateur selectionne "Français" dans la liste deroulante "langue_officielle_société"
     And l utilisateur selectionne "Dinar tunisien" dans la liste deroulante "Devise_société"
     And l utilisateur saisit "15 Rue de la liberté" dans le champs "Adresse_société"
     And l utilisateur selectionne "France" dans la liste deroulante "Pays_société"
