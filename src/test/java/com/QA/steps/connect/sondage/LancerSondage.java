@@ -25,6 +25,7 @@ public class LancerSondage {
 
     private static final WebDriver driver = GenerateurDriver.driver;
     private static final Logger logger = Logger.getLogger(LancerSondage.class);
+    private ActionsCommunes action = new ActionsCommunes();
 
     @Then("verifier que le sondage est affiché")
     public void verifierQueLeSondageEstAffiché() {
@@ -61,13 +62,13 @@ public class LancerSondage {
 
 
     @And("l utilisateur clique sur Bouton_Sondage_Portail et verifie le chargement de la liste des sondages")
-    public void lUtilisateurCliqueSurBouton_Sondage_PortailEtVerifieLeChargementDeLaListeDesSondages() {
+    public void lUtilisateurCliqueSurBouton_Sondage_PortailEtVerifieLeChargementDeLaListeDesSondages() throws InterruptedException {
 
         boolean x = true;
         while (x) {
 
             driver.findElement(By.xpath(SondageLocators.Bouton_Sondage_Portail)).click();
-
+            action.pause(driver,1500);
             try {
                 Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                         .withTimeout(2, SECONDS)
