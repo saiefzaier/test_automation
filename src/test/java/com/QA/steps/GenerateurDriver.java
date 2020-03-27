@@ -20,7 +20,7 @@ public class GenerateurDriver {
 
 
     @Before
-    public void DemarrageScenarioTest(Scenario scenario) {
+    public void DemarrageScenarioTest(Scenario scenario) throws Throwable {
         GenerateurDriver.scenario = scenario;
         if (driver == null) {
             driver = ConfigBasiqueWebDriver.get();
