@@ -64,7 +64,17 @@ public class GestionDuPersonnel {
     public static final String Devise_collaborateur_CL = "//*[@id=\"remuneration\"]/div/acc-core-rh-employee-remuneration-file-page/acc-core-rh-employee-salary-form/acc-table/section/div[2]/div/form/div[1]/acc-table-form/div[1]/div[2]/acc-select-cr/ng-select/div/ul/li";
     public static final String Date_de_début_collaborateur = "//*[@id=\"remuneration\"]/div/acc-core-rh-employee-remuneration-file-page/acc-core-rh-employee-salary-form/acc-table/section/div[2]/div/form/div[1]/acc-table-form/div[2]/div[1]/acc-date-picker/my-date-picker/div/div/input";
     public static final String Valider_salaire_collaborateur = "//*[@id=\"remuneration\"]/div/acc-core-rh-employee-remuneration-file-page/acc-core-rh-employee-salary-form/acc-table/section/div[2]/div/form/div[2]/button[2]";
-
-
-
+    public static final String Rechercher_Employe="/html/body/app-root/app-layout/div/section/div/ng-component/header/div/div/input";
+    public static final String DateDeNaissance_DossierIndividuel="//*[@id=\"individuel\"]/div/acc-core-rh-employee-individual-file-page/acc-core-rh-employee-identity-form/section/div[2]/div/div[3]/div[1]/acc-date-picker/my-date-picker/div/div/input";
+    public static final String DateDentree="//*[@id=\"administrative\"]/div/acc-core-rh-employee-administrative-file-page/acc-core-rh-employee-hiring-exit-form/acc-table/section/div[2]/div/div/div/div/table/tbody/tr/td[1]/span";
+    public static final String Date_Sortie_Collaborateur="//*[@id=\"administrative\"]/div/acc-core-rh-employee-administrative-file-page/acc-core-rh-employee-hiring-exit-form/acc-table/section/div[2]/div/div/div/div/table/tbody/tr/td[4]";
+    public static final String Bouton_Enregistrer_Modification="//*[@id=\"data-view \"]/acc-core-rh-employee-form/form/acc-core-rh-referential-update-revert-actions/i[2]";
+    public static final String DateDentree_DossierIndividuel="//*[@id=\"administrative\"]/div/acc-core-rh-employee-administrative-file-page/acc-core-rh-employee-hiring-exit-form/acc-table/section/div[2]/div/form/div[1]/acc-table-form/div[1]/div[1]/acc-date-picker/my-date-picker/div/div/input";
+    public static final String Bouton_Modifier_Entree_Sortie="//*[@id=\"administrative\"]/div/acc-core-rh-employee-administrative-file-page/acc-core-rh-employee-hiring-exit-form/acc-table/section/div[2]/div/div/div/div/table/tbody/tr/td[6]/i";
+    public static final String Bouton_Valider_Modification_Entree_Sortie="//*[@id=\"administrative\"]/div/acc-core-rh-employee-administrative-file-page/acc-core-rh-employee-hiring-exit-form/acc-table/section/div[2]/div/form/div[2]/button[2]";
+    public static final String Date_entree_texte="//*[@id=\"administrative\"]/div/acc-core-rh-employee-administrative-file-page/acc-core-rh-employee-hiring-exit-form/acc-table/section/div[2]/div/div/div/div/table/tbody/tr/td[1]/span";
+    public static final String NomUser="//*[@id=\"cover\"]/div/h3";
+    public static final String Fiche_User_Date_Entree="//*[@id=\"cover\"]/ul[2]/li[3]/span/time";
 }
+
+

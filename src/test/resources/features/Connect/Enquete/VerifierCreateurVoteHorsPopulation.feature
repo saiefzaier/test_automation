@@ -40,7 +40,7 @@
       And l utilisateur clique sur "Bouton_Confirmer_Ajouter_Enquete"
       And wait 3000
 
-    #Etape4 : Lancer une enquete
+     #Etape4 : Lancer une enquete
 
       When l utilisateur clique sur "Bouton_Lancer_Enquete"
       And wait 3000
@@ -49,7 +49,7 @@
       And l'utilisateur rafraichit la page
       Then verifier que l'enquete est encore affichée
 
-    #Etape5 : Verifier que l'enquete n'est pas affichée dans le portal
+     #Etape5 : Verifier que l'enquete n'est pas affichée dans le portal
 
       When l utilisateur clique sur "Bouton_Portal"
       And l utilisateur clique sur Bouton_Enquete_Portail et verifie le chargement de la liste des enquetes

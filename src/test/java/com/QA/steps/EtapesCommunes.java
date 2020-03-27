@@ -171,6 +171,8 @@ public class EtapesCommunes {
     @And("l utilisateur selectionne {string} dans la liste deroulante {string}")
     public void lutilisateurSelectionneDansLaListeDeroulante(String optionlistederoulante, String listederoulante) throws IllegalAccessException, InterruptedException {
         logger.info("L'utilisateur selectionne : " + optionlistederoulante + " dans la liste déroulante : " + listederoulante);
+        listededonnees.add(listederoulante);
+        listededonnees.add(optionlistederoulante);
         String locator = "vide";
         for (List<Field> f : ListeGlobaleLocators) {
             for (Field x : f) {
@@ -301,7 +303,6 @@ public class EtapesCommunes {
             L = driver.findElements(By.id(locator));
         }
 
-        Actions actions = new Actions(driver);
         for (WebElement x : L) {
             actions.moveToElement(x).perform();
             if (x.getText().equals(Optiondelaliste)) {
@@ -328,7 +329,7 @@ public class EtapesCommunes {
     public void vérifierQueLeTitreDuModalEstEtLeTexteDuCorpsDuModalEst(String titremodal, String textecorpsmodal) {
 
         Assert.assertEquals(driver.findElement(By.cssSelector("h4[class='modal-title']")).getAttribute("innerText"), titremodal);
-        Assert.assertEquals(driver.findElement(By.cssSelector("text-center")).getAttribute("innerText"), textecorpsmodal);
+        Assert.assertEquals(driver.findElement(By.cssSelector("div[class=text-center]")).getAttribute("innerText"), textecorpsmodal);
 
     }
 
@@ -367,7 +368,8 @@ public class EtapesCommunes {
     public void lUtilisateurSelectionneLaPopulationDansLaListeDesPopulations(String nompopulation, String populationenquete) throws IllegalAccessException, InterruptedException {
 
         String locator = "vide";
-
+        listededonnees.add(populationenquete);
+        listededonnees.add(nompopulation);
         for (List<Field> f : ListeGlobaleLocators) {
             for (Field x : f) {
                 if (x.getName().equals(populationenquete)) {
@@ -476,7 +478,7 @@ public class EtapesCommunes {
                 break;
             }
         }
-        if (!driver.findElement(By.xpath(locator)).getAttribute("innerTexte").equals(valeur)) {
+        if (driver.findElement(By.xpath(locator)).isDisplayed() && valeur.equals("Non")) {
             driver.findElement(By.xpath(locator)).click();
             String emplacement2 = "Sauvegarde_" + emplacement;
             locator = "vide";

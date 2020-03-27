@@ -4,10 +4,10 @@
 # Date de création: 21/01/2020
 
 
-#@ACCRETIO2
-#@ACCRETIO2-CONNECT
-#@ACCRETIO2-LIEN
-#@ACCRETIO2-LIEN-0003
+@ACCRETIO2
+@ACCRETIO2-CONNECT
+@ACCRETIO2-LIEN
+@ACCRETIO2-LIEN-0003
 
 Feature: Lien Utile
 
@@ -29,16 +29,20 @@ Feature: Lien Utile
 
    #Etape3 : Remplir les champs d'un lien
 
-    And l utilisateur saisit " Suppression titre lien" dans le champs "Titre_Lien_Creation"
-    And l utilisateur saisit "Suppression lien" dans le champs "Champ_Lien_Creation"
-    And l utilisateur saisit "Suppression description lien" dans le champs "Description_Lien_Creation"
+    And l utilisateur saisit "titre lien" dans le champs "Titre_Lien_Creation"
+    And l utilisateur saisit "lien" dans le champs "Champ_Lien_Creation"
+    And l utilisateur saisit "description lien" dans le champs "Description_Lien_Creation"
     And l utilisateur clique sur "Bouton_Confirmer_Ajout_Lien"
+    Then verifier que le lien a été ajouté avec succes
     And   wait 3000
+
 
     #Etape4 : Modifier un lien
 
    And l utilisateur clique sur "Bouton_Modifier_Lien"
-   And l utilisateur modifie " Suppression titre lien" dans le champs "Titre_Lien_Modification"
-   And l utilisateur modifie "Suppression lien" dans le champs "Champ_Lien_Modification"
-   And l utilisateur modifie "Suppression description lien" dans le champs "Description_Lien_Modification"
-   And l utilisateur clique sur "Bouton_Confirmer_Modification_Lien"
+   And l utilisateur modifie "titre lien modifie" dans le champs "Titre_Lien_Creation"
+   And l utilisateur modifie "lien modifie" dans le champs "Champ_Lien_Creation"
+   And l utilisateur modifie "description lien modifie" dans le champs "Description_Lien_Creation"
+   And l utilisateur clique sur "Bouton_Confirmer_Ajout_Lien"
+   Then verifier que le lien a été modifié avec succes
+

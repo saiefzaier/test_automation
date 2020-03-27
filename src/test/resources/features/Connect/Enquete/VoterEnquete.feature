@@ -1,5 +1,5 @@
 # Auteur: marwamaherssi
-# Feature: Sondage
+# Feature: Enquete
 # Scénario: Voter Enquete
 # Date de création: 04/12/2019
 

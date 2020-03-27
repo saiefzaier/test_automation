@@ -21,11 +21,13 @@ public class CollaborateurManagerRhValidationAbsence {
     private ActionsCommunes action = new ActionsCommunes();
 
     @And("Vérifier que la demande d'absence est déplacée au niveau de la rubrique Historique et que son statut devient Validée")
-    public void vérifierQueLaDemandeDAbsenceEstDéplacéeAuNiveauDeLaRubriqueHistoriqueEtQueSonStatutDevientValidée() {
+    public void vérifierQueLaDemandeDAbsenceEstDéplacéeAuNiveauDeLaRubriqueHistoriqueEtQueSonStatutDevientValidée() throws InterruptedException {
 
         logger.info("Vérification du déplacement de la demande vers l'historique et du changement de son statut vers validée");
-        driver.findElement(By.xpath(AbcencesLocators.Bouton_Historique_Demandes_Absences)).click();
-        Assert.assertEquals("Validée", driver.findElement(By.xpath(AbcencesLocators.Statut_Première_Absence_Liste_Historique)).getAttribute("innerText"));
+        driver.findElement(By.cssSelector(AbcencesLocators.Bouton_Historique_Demandes_Absences)).click();
+        action.pause(driver,4000);
+        WebElement modules = (new WebDriverWait(driver, 40)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(AbcencesLocators.Statut_Première_Absence_Liste_Historique)));
+        Assert.assertEquals("Validée", driver.findElement(By.cssSelector(AbcencesLocators.Statut_Première_Absence_Liste_Historique)).getAttribute("innerText"));
 
     }
 
@@ -40,8 +42,8 @@ public class CollaborateurManagerRhValidationAbsence {
         action.pause(driver,2000);
         driver.findElement(By.xpath(AbcencesLocators.Bouton_Mes_Absences)).click();
         Assert.assertEquals("Validée", driver.findElement(By.xpath(AbcencesLocators.Statut_Première_Absence_Mes_Absences)).getAttribute("innerText"));
-        WebElement wb = CollaborateurManagerValidationAbsence.Jourlibre;
-        Assert.assertTrue(wb.getAttribute("outerHTML").contains("style=\"background-color:"));
+        WebElement wb = driver.findElement(By.cssSelector(CollaborateurManagerValidationAbsence.Jourlibre));
+        Assert.assertEquals(wb.getAttribute("title"), ActionsCommunes.DataProvider("Motif_d_absence_Ajout_Demande_Absence_Collaborateur"));
 
     }
 

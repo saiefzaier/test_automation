@@ -16,8 +16,8 @@ Feature: Configuration
     #Etape 001: Connexion RH_Skills
 
     Given   le navigateur est ouvert et la page d'acceuil est affichée
-      And   l'utilisateur "combes.caroline@YOPMAIL.COM" est connecté
-     Then   le nom de l utilisateur "Caroline Combes" est affiche en haut a gauche
+      And   l'utilisateur "Dupont.Cedric@yopmail.com" est connecté
+     Then   le nom de l utilisateur "Cédric Dupont" est affiche en haut a gauche
 
     #Etape 002: Acceder  au sous module configuration
 

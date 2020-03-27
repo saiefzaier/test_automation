@@ -4,10 +4,10 @@
 # Date de création: 01/11/2019
 
 
-@ACCRETIO2
-@ACCRETIO2-TALENT
-@ACCRETIO2-RECRUTEMENT
-@ACCRETIO2-RECRUTEMENT-0001
+#@ACCRETIO2
+#@ACCRETIO2-TALENT
+#@ACCRETIO2-RECRUTEMENT
+#@ACCRETIO2-RECRUTEMENT-0001
 
   Feature: Recrutement : Demande de recrutement par manager avec validation
 

@@ -105,6 +105,7 @@ public class ConfigBasiqueWebDriver {
                         }
                         catch (WebDriverException ignored) {}
                     }
+                    ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
                     break;
 
                 default:

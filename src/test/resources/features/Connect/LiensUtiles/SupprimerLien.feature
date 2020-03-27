@@ -4,10 +4,10 @@
 # Date de création: 21/01/2020
 
 
-#@ACCRETIO2
-#@ACCRETIO2-CONNECT
-#@ACCRETIO2-LIEN
-#@ACCRETIO2-LIEN-0002
+@ACCRETIO2
+@ACCRETIO2-CONNECT
+@ACCRETIO2-LIEN
+@ACCRETIO2-LIEN-0002
 
 Feature: Lien Utile
 
@@ -39,8 +39,9 @@ Feature: Lien Utile
 
     And l utilisateur clique sur "Bouton_Supprimer_Lien"
     And l utilisateur clique sur "Bouton_Confirmer_Suppression"
+    And   wait 3000
 
     #Etape5 : Verifier que la suppression du lien a été effectuée
 
-   Then verifier que le lien a été supprimé avec succés
+    Then verifier que le lien a été supprimé avec succés
 

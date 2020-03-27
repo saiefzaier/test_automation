@@ -33,10 +33,9 @@ Feature: Sondage
     And l utilisateur saisit "oui" dans le champs "Reponse_1_sondage"
     And l utilisateur saisit "non" dans le champs "Reponse_2_sondage"
     And l utilisateur saisit la date de fin du sondage
-    And wait 2000
     And l utilisateur modifie "24" dans le champs "Champ_Heure_Fin_Sondage"
     And l utilisateur clique sur "Bouton_Confirmer_Ajout_Sondage"
-    And wait 3000
+    And   wait 3000
 
       #Etape4 : Lancer sondage
 

@@ -28,9 +28,21 @@ public class EnqueteLocators {
     public static final String Liste_Options_Enquete="/html/body/app-root/app-layout/div/section/div/acc-connect-satisfaction-survey-container/div/div/acc-connect-satisfaction-survey-table/p-datatable/div/div[1]/table/tbody/tr[1]/td[7]/span/acc-connect-satisfaction-survey-actions/i";
     public static final String Bouton_Axe_Enquete_Portail="/html/body/ngb-modal-window/div/div/acc-satisfaction-survey/div/div[2]/form/section[1]/div[1]/span";
     public static final String Bouton_Reponse_1_Enquete_Portail="/html/body/ngb-modal-window/div/div/acc-satisfaction-survey/div/div[2]/form/section[1]/div[2]/ul/li[1]/ul/li[1]/label/span";
+    public static final String Bouton_Reponse_2_Enquete_Portail="/html/body/ngb-modal-window/div/div/acc-satisfaction-survey/div/div[2]/form/section/div[2]/ul/li/ul/li[2]/label/span";
     public static final String Bouton_Voter_Enquete="/html/body/ngb-modal-window/div/div/acc-satisfaction-survey/div/div[2]/form/div/button[2]";
     public static final String Liste_Enquetes_Afficher_Bouton_Radio="i[class='fa fa-circle-o pr']";
     public static final String Premiere_Enquete_Afficher_Nombre_Reponse="/html/body/app-root/app-layout/div/section/div/acc-connect-satisfaction-survey-container/div/div/acc-connect-satisfaction-survey-table/p-datatable/div/div[1]/table/tbody/tr[1]/td[6]/span/span";
     public static final String Premiere_Enquete_Afficher_Connect="/html/body/app-root/app-layout/div/section/div/acc-connect-satisfaction-survey-container/div/div/acc-connect-satisfaction-survey-table/p-datatable/div/div[1]/table/tbody/tr[1]/td[1]/span/div/span";
+    public static final String Avancement_Premiere_Enquete="/html/body/app-root/app-layout/div/section/div/acc-connect-satisfaction-survey-container/div/div/acc-connect-satisfaction-survey-table/p-datatable/div/div[1]/table/tbody/tr[1]/td[3]/span/div/span";
+    public static final String Nombre_De_Reponse_Enquete="/html/body/app-root/app-layout/div/section/div/acc-connect-satisfaction-survey-container/div/div/acc-connect-satisfaction-survey-table/p-datatable/div/div[1]/table/tbody/tr[1]/td[6]/span/span";
+    public static final String Nom_Premier_Participant_Enquete="/html/body/ngb-modal-window/div/div/acc-connect-satisfaction-survey-response/div/div[1]/acc-satisfaction-survey-collaborators-list/div[1]/a[1]/div";
+    public static final String Nom_Deuxieme_Participant_Enquete="/html/body/ngb-modal-window/div/div/acc-connect-satisfaction-survey-response/div/div[1]/acc-satisfaction-survey-collaborators-list/div[1]/a[2]/div";
+    public static final String Axe_Enquete_Reponse="/html/body/ngb-modal-window/div/div/acc-connect-satisfaction-survey-response/div/div[2]/acc-satisfaction-survey-response/div/div[2]/form/section/div[1]";
+    public static final String Participant_Reponse1_Enquete="/html/body/ngb-modal-window/div/div/acc-connect-satisfaction-survey-response/div/div[2]/acc-satisfaction-survey-response/div/div[2]/form/section/div[2]/ul/li/ul/li[1]/label/input";
+    public static final String Participant_Reponse2_Enquete="/html/body/ngb-modal-window/div/div/acc-connect-satisfaction-survey-response/div/div[2]/acc-satisfaction-survey-response/div/div[2]/form/section/div[2]/ul/li/ul/li[2]/label/input";
+    public static final String Bouton_Dupliquer_Enquete="i[class='icons8-copy']";
+    public static final String Libelle_Enquete_Duplication="/html/body/ngb-modal-window/div/div/acc-satisfaction-survey-form/div/form/div[2]/div/div/div/section/div[2]/div[1]/input";
+    public static final String Bouton_Confirmer_Dupliquer_Enquete="/html/body/ngb-modal-window/div/div/acc-satisfaction-survey-form/div/form/div[3]/button[2]";
+    public static final String Avancement_Deuxieme_Enquete="/html/body/app-root/app-layout/div/section/div/acc-connect-satisfaction-survey-container/div/div/acc-connect-satisfaction-survey-table/p-datatable/div/div[1]/table/tbody/tr[2]/td[3]/span/div";
 
 }

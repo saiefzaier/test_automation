@@ -4,10 +4,10 @@
 # Date de création: 21/01/2020
 
 
-#@ACCRETIO2
-#@ACCRETIO2-CONNECT
-#@ACCRETIO2-LIEN
-#@ACCRETIO2-LIEN-0001
+@ACCRETIO2
+@ACCRETIO2-CONNECT
+@ACCRETIO2-LIEN
+@ACCRETIO2-LIEN-0001
 
 Feature: Lien Utile
 
@@ -27,7 +27,7 @@ Feature: Lien Utile
     And l utilisateur clique sur "Bouton_Ajouter_Lien"
     And   wait 3000
 
-     #Etape3 : Remplir les champs d'un sondage
+     #Etape3 : Remplir les champs d'un Lien utile
 
     And l utilisateur saisit "Ajout titre lien" dans le champs "Titre_Lien_Creation"
     And l utilisateur saisit "Ajout Lien" dans le champs "Champ_Lien_Creation"

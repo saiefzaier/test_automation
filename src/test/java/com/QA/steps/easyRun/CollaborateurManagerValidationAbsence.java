@@ -1,68 +1,94 @@
 package com.QA.steps.easyRun;
 
+import com.QA.base.streams;
 import com.QA.locators.AbcencesLocators;
 import com.QA.locators.CommonLocators;
 import com.QA.steps.ActionsCommunes;
 import com.QA.steps.GenerateurDriver;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 public class CollaborateurManagerValidationAbsence {
 
     private static final Logger logger = Logger.getLogger(CollaborateurManagerValidationAbsence.class);
     private final WebDriver driver = GenerateurDriver.driver;
     private ActionsCommunes action = new ActionsCommunes();
-    private static String etat = "Pas encore";
-    public static WebElement Jourlibre;
-    List<List<WebElement>> listejours = null;
+
+    public static String Jourlibre;
+    List<WebElement> listejours = null;
+    public Actions actions = new Actions(driver);
+    Wait wait = new FluentWait<WebDriver>(driver)
+            .withTimeout(Duration.ofSeconds(2))
+            .pollingEvery(Duration.ofMillis(500))
+            .ignoring(NoSuchElementException.class);
+
 
     @And("l utilisateur selectionne une case de journée libre dans le calendrier")
-    public void lUtilisateurSelectionneUneCaseDeJournéeLibreDansLeCalendrier() {
+    public void lUtilisateurSelectionneUneCaseDeJournéeLibreDansLeCalendrier() throws InterruptedException {
 
         logger.info("Recherche d'une journée libre");
-        WebElement modules = (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(By.xpath(AbcencesLocators.Bouton_Avance_Mois_Calendrier_Ajout_Abcence)));
-        listejours.add(driver.findElements(By.cssSelector("fc-day ui-widget-content fc-mon fc-future")));
-        listejours.add(driver.findElements(By.cssSelector("fc-day ui-widget-content fc-tue fc-future")));
-        listejours.add(driver.findElements(By.cssSelector("fc-day ui-widget-content fc-wed fc-future")));
-        listejours.add(driver.findElements(By.cssSelector("fc-day ui-widget-content fc-thu fc-future")));
-        listejours.add(driver.findElements(By.cssSelector("fc-day ui-widget-content fc-fri fc-future")));
-        while (etat.equals("Pas encore")) {
-            for (List<WebElement> L : listejours) {
-                for (WebElement jour : L) {
-                    if (!jour.getAttribute("outerHTML").contains("style=\"background-color:")) {
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        String etat = "Pas encore";
+        int semaine;
+        int jour;
+        String locator;
+        String locator1;
+        String locator2;
+        Object jourabsence = null;
+        Object jourabsence1 = null;
+        String[] joursdelasemaine = new String[]{" ", ".fc-mon", ".fc-tue", ".fc-wed", ".fc-thu", ".fc-fri", ".fc-sat", ".fc-sun"};
 
-                        Jourlibre = jour;
-                        JavascriptExecutor executor = (JavascriptExecutor) driver;
-                        executor.executeScript("arguments[0].click();", jour);
-                        etat = "Jour trouvé";
-                        break;
+        while (etat.equals("Pas encore")) {
+            for (semaine = 1; semaine < 7; semaine++) {
+                for (jour = 1; jour < 8; jour++) {
+                    action.pause(driver, 3000);
+                    locator = (".fc-week:nth-child(" + semaine + ") > .fc-bg .fc-day:not([style]):nth-child(" + jour + ")");
+                    locator1 = (".fc-week:nth-child(" + semaine + ") > .fc-bg .fc-day:not([style]):nth-child(" + jour + ") .absence-wrapper");
+                    try {
+                        action.pause(driver, 3000);
+                        jourabsence = driver.findElement(By.cssSelector(locator));
+                        jourabsence1 = driver.findElement(By.cssSelector(locator1));
+                    } catch (NoSuchElementException ignore) {
                     }
-                    if (etat.equals("Jour trouvé")) {
-                        break;
+                    if (!(jourabsence == null)) {
+                        if (jourabsence1 == null) {
+                            locator2 = ".fc-row:nth-child(" + semaine + ") > .fc-content-skeleton " + joursdelasemaine[jour];
+                            System.out.println(locator2);
+                            Jourlibre = locator1;
+                            actions.moveToElement(driver.findElement(By.cssSelector(locator2))).clickAndHold().perform();
+                            driver.findElement(By.cssSelector(".fc-highlight")).click();
+                            WebElement modules1 = (new WebDriverWait(driver, 10))
+                                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath(AbcencesLocators.Popup_Ajout_Absences_Header)));
+                            etat = "Jour trouvé";
+                            break;
+                        }
+                        jourabsence1 = null;
+                        jourabsence = null;
                     }
                 }
+                if (!etat.equals("Pas encore")) {
+                    break;
+                }
             }
-            if (etat.equals("Jour trouvé")) {
-                break;
-            } else {
-                driver.findElement(By.xpath(AbcencesLocators.Bouton_Avance_Mois_Calendrier_Ajout_Abcence)).click();
-                listejours.add(driver.findElements(By.cssSelector("fc-day ui-widget-content fc-mon fc-future")));
-                listejours.add(driver.findElements(By.cssSelector("fc-day ui-widget-content fc-tue fc-future")));
-                listejours.add(driver.findElements(By.cssSelector("fc-day ui-widget-content fc-wed fc-future")));
-                listejours.add(driver.findElements(By.cssSelector("fc-day ui-widget-content fc-thu fc-future")));
-                listejours.add(driver.findElements(By.cssSelector("fc-day ui-widget-content fc-fri fc-future")));
-            }
+            driver.findElement(By.xpath(AbcencesLocators.Bouton_Avance_Mois_Calendrier_Ajout_Abcence)).click();
         }
+        driver.manage().timeouts().implicitlyWait(Long.parseLong(streams.readers().getProperty("Implicitwait")), TimeUnit.SECONDS);
+
         logger.info("Journée libre trouvée");
     }
 
@@ -77,23 +103,28 @@ public class CollaborateurManagerValidationAbsence {
     @And("vérifier que le statut de la demande devient En cours")
     public void vérifierQueLeStatutDeLaDemandeDevientEnCours() {
 
-        Assert.assertTrue(driver.findElement(By.xpath(AbcencesLocators.Profil_Initiateur_Absence_Liste_Absence)).getAttribute("innerText").contains(ActionsCommunes.DataProvider("Population_Affectation_Population_Motif_Abcence")));
-        Assert.assertTrue(driver.findElement(By.xpath(AbcencesLocators.Profil_Backup_Absence_Liste_Absence)).getAttribute("innerText").contains(ActionsCommunes.DataProvider("Backup_Ajout_Demande_Absence_Collaborateur")));
-        Assert.assertTrue(driver.findElement(By.xpath(AbcencesLocators.Statut_Nouvelle_Demande_Absence)).getAttribute("innerText").contains("En cours"));
+        WebElement modules = (new WebDriverWait(driver, 40))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(AbcencesLocators.Profil_Initiateur_Absence_Liste_Absence)));
+        //Assert.assertTrue(driver.findElement(By.xpath(AbcencesLocators.Profil_Initiateur_Absence_Liste_Absence)).getAttribute("innerText").contains(ActionsCommunes.DataProvider("Population_Affectation_Population_Motif_Abcence")));
+        Assert.assertTrue(driver.findElement(By.xpath(AbcencesLocators.Profil_Initiateur_Absence_Liste_Absence)).getAttribute("innerText").contains("Cosette Berger"));
+        //Assert.assertTrue(driver.findElement(By.xpath(AbcencesLocators.Profil_Backup_Absence_Liste_Absence)).getAttribute("innerText").contains(ActionsCommunes.DataProvider("Backup_Ajout_Demande_Absence_Collaborateur")));
+        Boolean modules1 = (new WebDriverWait(driver, 40))
+                .until(ExpectedConditions.attributeToBe(driver.findElement(By.xpath(AbcencesLocators.Statut_Nouvelle_Demande_Absence)), "title", "En cours"));
+        Assert.assertTrue(driver.findElement(By.xpath(AbcencesLocators.Statut_Nouvelle_Demande_Absence)).getAttribute("title").contains("En cours"));
 
     }
 
     @And("l'utilisateur vérifie que le statut de la journée type est Actif")
     public void lUtilisateurVérifieQueLeStatutDeLaJournéeTypeEstActif() {
 
-        Assert.assertEquals("form-control input-sm ng-valid ng-touched ng-pristine", driver.findElement(By.xpath(CommonLocators.Statut_Ajout_Journée_Type)).getAttribute("className"));
+        Assert.assertEquals("true", driver.findElement(By.xpath(CommonLocators.Statut_Ajout_Journée_Type)).getAttribute("checked"));
     }
 
 
     @And("l'utilisateur vérifie que le statut du cycle de travail est Actif")
     public void lUtilisateurVérifieQueLeStatutDuCycleDeTravailEstActif() {
 
-        Assert.assertEquals("form-control input-sm ng-untouched ng-pristine ng-valid", driver.findElement(By.xpath(CommonLocators.Statut_Ajout_Cycle_De_Travail)).getAttribute("className"));
+        Assert.assertEquals("true", driver.findElement(By.xpath(CommonLocators.Statut_Ajout_Cycle_De_Travail)).getAttribute("checked"));
     }
 
 

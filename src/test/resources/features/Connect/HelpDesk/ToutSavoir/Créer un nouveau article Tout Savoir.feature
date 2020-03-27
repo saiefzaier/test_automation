@@ -3,11 +3,9 @@
 # Scénario: Création d'un nouveau article
 # Date de création: 05/12/2019
 
-
 #@ACCRETIO2
 #@ACCRETIO2-CONNECT
 #@ACCRETIO2-HelpDesk
-#@ACCRETIO2-HelpDesk-ToutSavoir
 #@ACCRETIO2-HelpDesk-ToutSavoir-0001
 
 
@@ -28,9 +26,9 @@
 
       #Etape3 : Remplir les champs d'un nouveau article
 
-      When l utilisateur saisit "Nouveau article tout savoir" dans le champs "Titre_Article_ToutSavoir"
+      When l utilisateur saisit "Nouveau article tout savoir ajout" dans le champs "Titre_Article_ToutSavoir"
       And l utilisateur selectionne "Politique RH " dans la liste deroulante "Catégorie_Article_ToutSavoir"
-      And l utilisateur saisit "C'est la description de l'article" dans le champs "Description_Article_ToutSavoir"
+      And l utilisateur saisit "C'est la description de l'article ajouté" dans le champs "Description_Article_ToutSavoir"
       And l utilisateur clique sur "Bouton_Ajout_Article_ToutSavoir"
 
       #Etape4 :  Vérification de la création d'un nouveau article tout savoir

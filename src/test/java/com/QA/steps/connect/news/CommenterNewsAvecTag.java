@@ -50,7 +50,7 @@ public class CommenterNewsAvecTag {
     public void lUtilisateurChoisitLeProfilDuTagDuCommentaireNewsDansLaListe() throws InterruptedException {
 
         String str = ActionsCommunes.DataProvider("Champs_Input_Commentaire").substring(1);
-        Boolean modules = (new WebDriverWait(driver, 100))
+        Boolean modules = (new WebDriverWait(driver, 50))
                 .until(ExpectedConditions.refreshed(ExpectedConditions.attributeContains(By.cssSelector(CommonLocators.Option_Liste_Profil_Tag), "innerText", str)));
         WebElement element = driver.findElement(By.cssSelector(CommonLocators.Option_Liste_Profil_Tag));
         JavascriptExecutor executor = (JavascriptExecutor) driver;

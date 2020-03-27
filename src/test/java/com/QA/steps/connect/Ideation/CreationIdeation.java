@@ -32,7 +32,6 @@ public class CreationIdeation {
     public void vérifierQueLIdéeEstCrée() {
 
 
-
         String str1 = ActionsCommunes.DataProvider("Libelle_Creation_Idee");
         String str2 = ActionsCommunes.DataProvider("Description_Creation_Idee");
 

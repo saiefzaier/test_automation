@@ -27,6 +27,7 @@ Feature: Timeline
     #Timeline qui contient les utilisateurs du module connect
     And l utilisateur clique sur "Bouton_Publication_Statut"
     And wait 3000
+
       #Etape 3 : Ajout commentaire avec tag sur le statut
     
     When l utilisateur saisit "@Gilles Guimond" dans le champs "Champs_Input_Commentaire"

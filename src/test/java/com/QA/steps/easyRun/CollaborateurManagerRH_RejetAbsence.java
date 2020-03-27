@@ -28,8 +28,8 @@ public class CollaborateurManagerRH_RejetAbsence {
         action.pause(driver,2000);
         driver.findElement(By.xpath(AbcencesLocators.Bouton_Mes_Absences)).click();
         Assert.assertEquals("Rejetée", driver.findElement(By.xpath(AbcencesLocators.Statut_Première_Absence_Mes_Absences)).getAttribute("innerText"));
-        WebElement wb = CollaborateurManagerValidationAbsence.Jourlibre;
-        Assert.assertTrue(wb.getAttribute("outerHTML").contains("style=\"background-color:"));
+        WebElement wb = driver.findElement(By.cssSelector(CollaborateurManagerValidationAbsence.Jourlibre));
+        Assert.assertEquals(wb.getAttribute("title"), ActionsCommunes.DataProvider("Motif_d_absence_Ajout_Demande_Absence_Collaborateur"));
 
 
     }
