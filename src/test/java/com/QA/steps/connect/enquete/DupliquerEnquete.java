@@ -21,7 +21,7 @@ public class DupliquerEnquete {
         WebElement modules1 = (new WebDriverWait(driver, 50))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(EnqueteLocators.Premiere_Enquete_Libelle)));
         Boolean modules2 = (new WebDriverWait(driver, 50))
-                .until(ExpectedConditions.attributeToBe(By.xpath(EnqueteLocators.Premiere_Enquete_Libelle), "innerText",str1));
+                .until(ExpectedConditions.refreshed(ExpectedConditions.attributeToBe(By.xpath(EnqueteLocators.Premiere_Enquete_Libelle), "innerText",str1)));
         String str2=driver.findElement(By.xpath(EnqueteLocators.Premiere_Enquete_Libelle)).getAttribute("innerText");
         Assert.assertEquals(str1,str2);
 

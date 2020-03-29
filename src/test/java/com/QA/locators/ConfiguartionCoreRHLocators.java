@@ -7,7 +7,7 @@ public class ConfiguartionCoreRHLocators {
     public static final String Liste_Configuration = "/html[1]/body[1]/app-root[1]/app-layout[1]/div[1]/section[1]/div[1]/acc-core-config-container[1]/div[1]/div[1]/div[1]/div[2]/a";
     public static final String Code_Marque = "input[class*='ng-valid'][formcontrolname='code']";
     public static final String Marque = "input[class*='ng-valid'][formcontrolname='label']";
-    public static final String Bouton_Ajout_Marque = "//*[@id=\"fields\"]/div/form/div/div[9]/div/div/div[3]/span";
+    public static final String Bouton_Ajout_Marque = "//*[@id=\"fields\"]/div/form/div/div[7]/div/div/div[3]/span/button";
     public static final String Bouton_Enregistrer_Marque = "/html/body/app-root/app-layout/div/section/div/acc-core-config-container/div/div[2]/acc-generic-cr-container/div/div[2]/div/div[1]/div[2]/div/button[2]";
     public static final String Recherche_Collection = "/html[1]/body[1]/app-root[1]/app-layout[1]/div[1]/section[1]/div[1]/acc-core-config-container[1]/div[1]/div[2]/acc-generic-cr-container[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]";
     public static final String Bouton_Ajouter_Modèle = "/html[1]/body[1]/app-root[1]/app-layout[1]/div[1]/section[1]/div[1]/acc-core-config-container[1]/div[1]/div[2]/acc-generic-cr-container[1]/div[1]/div[2]/div[1]/div[2]/div[1]/acc-vehiclemodel-container[1]/div[2]/section[1]/div[2]/acc-tab-header[1]/header[1]/ul[1]/li[2]/a[1]";
