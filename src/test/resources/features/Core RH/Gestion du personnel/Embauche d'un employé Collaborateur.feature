@@ -30,7 +30,7 @@ Feature: Gestion du personnel
     And l utilisateur saisit "01/01/2019" dans le champs "Date_d_entrée_collaborateur"
     And l utilisateur selectionne "Interne" dans la liste deroulante "Type_collaborateur"
     And l utilisateur saisit "SOC00300" dans le champs "Matricule_collaborateur"
-    And l utilisateur selectionne "M." dans la liste deroulante "Qualité_collaborateur"
+    And l utilisateur selectionne "Monsieur" dans la liste deroulante "Qualité_collaborateur"
     And l utilisateur saisit "Tounsi" dans le champs "Nom_collaborateur"
     And l utilisateur saisit "Ahmed" dans le champs "Prénom_collaborateur"
     And l utilisateur saisit "15/11/1984" dans le champs "Date_de_naissance_collaborateur"
