@@ -45,7 +45,7 @@ Feature: Référentiels
     And l utilisateur selectionne "Prestataires de services" dans la liste deroulante "Convention_collective_société"
     And l utilisateur saisit "SOCTN000000780" dans le champs "Affiliation_sécurité_sociale_société"
     And l utilisateur saisit "SOCREGTN000004" dans le champs "Registre_de_commerce_société"
-    And l utilisateur saisit "11147" dans le champs "Numéro_TVA_société"
+    #And l utilisateur saisit "11147" dans le champs "Numéro_TVA_société"
     And l utilisateur clique sur "Sauvegarder_société"
     Then vérifier que le message "Opération effectuée avec succès" s affiche
 

@@ -40,12 +40,12 @@ Feature: Gestion du personnel
     ## Deuxième popup d'embauche ##
     And  l utilisateur clique sur "Continuer"
     And l utilisateur selectionne "Embauche" dans la liste deroulante "Motif_d_entrée_collaborateur"
-    And l utilisateur selectionne "Advyteam Global 3" dans la liste deroulante "Société_collaborateur"
-    And l utilisateur selectionne "etblissement" dans la liste deroulante "Etablissement_collaborateur"
-    And l utilisateur selectionne "Direction générale" dans la liste deroulante "Entité_organisationnelle_collaborateur"
-    And l utilisateur selectionne "Ingénieur R&D" dans la liste deroulante "Emploi_collaborateur"
-    And l utilisateur selectionne "test" dans la liste deroulante "Poste_collaborateur"
-    And l utilisateur selectionne "CDI" dans la liste deroulante "Type_du_contrat_collaborateur"
+    And l utilisateur selectionne "Delfingen QA" dans la liste deroulante "Société_collaborateur"
+    And l utilisateur selectionne "DFG_Siège social" dans la liste deroulante "Etablissement_collaborateur"
+    And l utilisateur selectionne "DFG_Direction générale" dans la liste deroulante "Entité_organisationnelle_collaborateur"
+    And l utilisateur selectionne "DFG_Ingénieur" dans la liste deroulante "Emploi_collaborateur"
+    And l utilisateur selectionne "DFG_Ingénieur unité de production" dans la liste deroulante "Poste_collaborateur"
+    And l utilisateur selectionne "Contrat à durée Indéterminée" dans la liste deroulante "Type_du_contrat_collaborateur"
     #And l utilisateur saisit "01/01/2019" dans le champs "Date de début du contrat"
     And l utilisateur clique sur "Enregistrer_Collaborateur"
     And vérifier que le message "Opération effectuée avec succès" s affiche
