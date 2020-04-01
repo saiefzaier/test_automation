@@ -178,8 +178,8 @@ public class ReferentielsLocators {
     public static final String Ajouter_responsable_EO = "//*[@id=\"organizationalEntityForm\"]/acc-core-rh-referential-organizational-entity-form/form/div[4]/button[2]";
     public static final String Date_de_début_responsable_EO = "/html/body/ngb-modal-window/div/div/acc-respensible-entity-add/div/div[2]/section/form/div/div[1]/acc-date-picker/my-date-picker/div/div/input";
     public static final String Responsable_EO = "/html/body/ngb-modal-window/div/div/acc-respensible-entity-add/div/div[2]/section/form/div/div[3]/acc-custom-select/ng-select/div/div[2]/span";
-    public static final String Responsable_EO_IL = "/html/body/ngb-modal-window/div/div/acc-respensible-entity-add/div/div[2]/section/form/div/div[3]/acc-custom-select/ng-select/div/ul/li";
-    public static final String Responsable_EO_CL = "//*[@id=\"organizationalEntityForm\"]/acc-core-rh-referential-organizational-entity-form/form/acc-core-rh-referential-organizational-entity-entitymanager-form/acc-table/section/div[2]/div/form/div[1]/acc-table-form/div/div/div[3]/acc-custom-select/ng-select/div/ul/li";
+    public static final String Responsable_EO_IL = "/html/body/ngb-modal-window/div/div/acc-respensible-entity-add/div/div[2]/section/form/div/div[3]/acc-custom-select/ng-select/div/input";
+    public static final String Responsable_EO_CL = "/html/body/ngb-modal-window/div/div/acc-respensible-entity-add/div/div[2]/section/form/div/div[3]/acc-custom-select/ng-select/div/ul/li";
     public static final String Valider_Responsable_EO = "/html/body/ngb-modal-window/div/div/acc-respensible-entity-add/div/div[3]/button[2]";
     public static final String Sauvegarder_EO = "//*[@id=\"organizationalEntityForm\"]/acc-core-rh-referential-organizational-entity-form/form/acc-core-rh-referential-update-revert-actions/i[2]";
     public static final String Ajouter_une_EO = "/html/body/app-root/app-layout/div/section/div/acc-referential/div/div/acc-core-rh-referential-organizationalentity-container/header/div/acc-core-rh-referential-add-delete-actions/i[2]";
