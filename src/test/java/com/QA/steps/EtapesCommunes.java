@@ -502,6 +502,52 @@ public class EtapesCommunes {
     public void lUtilisateurRafraichitLaPage() {
         driver.navigate().refresh();
     }
-}
+
+    @Then("verifier la présence de {string} dans la liste {string}")
+    public void verifierLaPrésenceDeDansLaListe(String Optiondelaliste, String liste) throws IllegalAccessException {
+
+        logger.info("L'utilisateur vérifie la présence de  : " + Optiondelaliste + " dans la liste : " + liste);
+        String locator = "vide";
+        List<WebElement> L;
+        for (List<Field> f : ListeGlobaleLocators) {
+            for (Field x : f) {
+                if (x.getName().equals(liste)) {
+                    locator = (String) x.get(x);
+                    break;
+                }
+            }
+            if (!locator.equals("vide")) {
+                break;
+            }
+        }
+
+        if (Character.toString(locator.charAt(0)).contains("/")) {
+            L = driver.findElements(By.xpath(locator));
+        } else if (locator.contains("[") || Character.toString(locator.charAt(0)).contains(".")) {
+            L = driver.findElements(By.cssSelector(locator));
+        } else {
+            L = driver.findElements(By.id(locator));
+        }
+
+        boolean  elementExiste=false;
+
+        for (WebElement x : L) {
+            actions.moveToElement(x).perform();
+            if (x.getAttribute("title").equals(Optiondelaliste)) {
+                elementExiste=true;
+                logger.info("Element trouvé ");
+                break;
+            }
+        }
+
+        Assert.assertTrue(elementExiste);
+
+
+    }
+
+
+
+    }
+
 
 
