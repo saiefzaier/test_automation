@@ -3,10 +3,10 @@
 # Scénario: Dupliquer enquete lancée et verifier que l'avancement n'est pas réinitialisé
 # Date de création: 12/02/2020
 
-#@ACCRETIO2
-#@ACCRETIO2-CONNECT
-#@ACCRETIO2-ENQUETE
-#@ACCRETIO2-ENQUETE-0014
+@ACCRETIO2
+@ACCRETIO2-CONNECT
+@ACCRETIO2-ENQUETE
+@ACCRETIO2-ENQUETE-0014
 
 
 Feature: Enquete

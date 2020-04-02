@@ -3,10 +3,10 @@
 # Scénario: Verifier l'avancement de l'enquête en se basant a une population précise
 # Date de création: 31/01/2020
 
-#@ACCRETIO2
-#@ACCRETIO2-CONNECT
-#@ACCRETIO2-ENQUETE
-#@ACCRETIO2-ENQUETE-0011
+@ACCRETIO2
+@ACCRETIO2-CONNECT
+@ACCRETIO2-ENQUETE
+@ACCRETIO2-ENQUETE-0011
 
 
 Feature: Enquete

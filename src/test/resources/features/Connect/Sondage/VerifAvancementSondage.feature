@@ -3,10 +3,10 @@
 # Scénario: Verifier l'avancement du sondage en ajoutant une population bien précise
 # Date de création: 31/01/2020
 
-#@ACCRETIO2
-#@ACCRETIO2-CONNECT
-#@ACCRETIO2-SONDAGE
-#@ACCRETIO2-SONDAGE-0011
+@ACCRETIO2
+@ACCRETIO2-CONNECT
+@ACCRETIO2-SONDAGE
+@ACCRETIO2-SONDAGE-0011
 
 
 Feature: Sondage
