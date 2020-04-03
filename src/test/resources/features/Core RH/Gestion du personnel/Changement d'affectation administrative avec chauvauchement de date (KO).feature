@@ -46,7 +46,7 @@ Feature: Gestion du personnel
     And l utilisateur selectionne "DFG_Ingénieur" dans la liste deroulante "Emploi_collaborateur"
     And l utilisateur selectionne "DFG_Ingénieur atelier" dans la liste deroulante "Poste_collaborateur"
     And l utilisateur selectionne "Contrat à durée indéterminée" dans la liste deroulante "Type_du_contrat_collaborateur"
-    And l utilisateur saisit "01/03/2020" dans le champs "Date de début du contrat"
+  #  And l utilisateur saisit "01/03/2020" dans le champs "Date de début du contrat"
     And l utilisateur clique sur "Enregistrer_Collaborateur"
     And vérifier que le message "Opération effectuée avec succès" s affiche
     And wait 8000
@@ -61,7 +61,7 @@ Feature: Gestion du personnel
     And l utilisateur selectionne "DFG_Atelier France" dans la liste deroulante "Entité_Affectation"
     And l utilisateur selectionne "DFG_Ingénieur atelier" dans la liste deroulante "Poste_Affectation"
     And l utilisateur clique sur "Bouton_Valider_Affectation"
-    And l utilisateur clique sur "Enregistrer_Collaborateur"
+    And l utilisateur clique sur "Bouton_Enregistrer_Modification"
     And vérifier que le message "La date de début de l'affectation doit être supérieure à la date de fin de l'affectation précédente" s affiche
 
 
