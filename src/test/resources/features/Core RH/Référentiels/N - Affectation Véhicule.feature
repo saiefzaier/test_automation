@@ -59,7 +59,7 @@ Feature: Gestion du personnel
     And wait 1000
     And l utilisateur clique sur "Bouton_Ajouter_Affectation_Véhicule"
     And l utilisateur selectionne "200 TU 2200" dans la liste deroulante "Liste_Immatriculation"
-    And l utilisateur saisit "2/03/2020" dans le champs "Début_Usage_Véhicule"
+    And l utilisateur saisit "02/03/2020" dans le champs "Début_Usage_Véhicule"
     And wait 5000
     And l utilisateur saisit "15/03/2020" dans le champs "Fin_Usage_Véhicule"
     And l utilisateur clique sur "Bouton_Valider_Affecatation_Véhicule"
