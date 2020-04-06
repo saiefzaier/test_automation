@@ -318,7 +318,7 @@ public class EtapesCommunes {
         WebElement modules = (new WebDriverWait(driver, 300))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(CommonLocators.Notification_Simple)));
         Boolean veriftxtnotif = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.attributeToBeNotEmpty(modules,"innerText"));
+                .until(ExpectedConditions.refreshed(ExpectedConditions.attributeToBeNotEmpty(modules,"innerText")));
         action.pause(driver,800);
         Assert.assertTrue(modules.getAttribute("innerText").contains(textenotification));
 
