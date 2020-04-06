@@ -317,11 +317,10 @@ public class EtapesCommunes {
         logger.info("Vérification de l'affichage du message : " + textenotification);
         WebElement modules = (new WebDriverWait(driver, 300))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(CommonLocators.Notification_Simple)));
-
         Boolean veriftxtnotif = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.attributeToBe(By.cssSelector(CommonLocators.Notification_Simple),"innerText",textenotification));
-
-        Assert.assertTrue(veriftxtnotif);
+                .until(ExpectedConditions.attributeToBeNotEmpty(modules,"innerText"));
+        action.pause(driver,800);
+        Assert.assertTrue(modules.getAttribute("innerText").contains(textenotification));
 
     }
 
