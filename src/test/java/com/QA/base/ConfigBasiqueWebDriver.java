@@ -88,7 +88,7 @@ public class ConfigBasiqueWebDriver {
 
                 case "chrome-headless":
                     ChromeOptions optionsCh = new ChromeOptions();
-                    optionsCh.addArguments("--headless");
+                    //optionsCh.addArguments("--headless");
                     optionsCh.addArguments("start-maximized");
                     optionsCh.addArguments("--window-size=1920,1080");
                     optionsCh.addArguments("enable-automation");
