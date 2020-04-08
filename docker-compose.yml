@@ -8,6 +8,8 @@ selenium-hub:
 selenium-chrome-1:
   restart: always
   image: selenium/node-chrome-debug
+  ports:
+    - "5900:5900"
   stdin_open: true
   links:
     - selenium-hub:hub
