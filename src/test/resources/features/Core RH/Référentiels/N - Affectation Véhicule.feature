@@ -63,6 +63,7 @@ Feature: Gestion du personnel
     And wait 5000
     And l utilisateur saisit "15/03/2020" dans le champs "Fin_Usage_Véhicule"
     And l utilisateur clique sur "Bouton_Valider_Affecatation_Véhicule"
+    And wait 3000
     And l utilisateur clique sur "Bouton_Enregistrer_Modification"
     And vérifier que le message "Opération effectuée avec succès" s affiche
 

@@ -58,9 +58,11 @@ Feature: Référentiels
 
     # Etape 5 Ajout de véhicule
     And l utilisateur saisit "Delfingen QA" dans le champs "Recherche_Sociétés"
-    And wait 1000
+    And wait 2000
     And l utilisateur selectionne "Delfingen QA" dans la liste "Liste_Societe"
+    And wait 2000
     And l utilisateur clique sur "Onglet_Véhicules"
+    And wait 2000
     And l utilisateur clique sur "Bouton_Ajouter_Véhicule"
     And l utilisateur saisit "200 TU 2200" dans le champs "Immatriculation_Véhicule"
     And l utilisateur selectionne "Ford" dans la liste deroulante "Marque_Véhicule"
