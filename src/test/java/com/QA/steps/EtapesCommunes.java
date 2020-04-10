@@ -318,9 +318,11 @@ public class EtapesCommunes {
         WebElement modules = (new WebDriverWait(driver, 300))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(CommonLocators.Notification_Simple)));
         Boolean veriftxtnotif = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.refreshed(ExpectedConditions.attributeToBeNotEmpty(modules,"innerText")));
-        action.pause(driver,1000);
+                .until(ExpectedConditions.refreshed(ExpectedConditions.attributeToBeNotEmpty(modules, "innerText")));
+        action.pause(driver, 1000);
         Assert.assertTrue(modules.getAttribute("innerText").contains(textenotification));
+        action.pause(driver, 100);
+        modules.click();
 
     }
 
@@ -381,11 +383,20 @@ public class EtapesCommunes {
             }
         }
         if (Character.toString(locator.charAt(0)).contains("/")) {
-            driver.findElement(By.xpath(locator)).sendKeys(nompopulation);
+            for (int i = 0; i < nompopulation.length(); i++) {
+                driver.findElement(By.xpath(locator)).sendKeys(Character.toString(nompopulation.charAt(i)));
+                action.pause(driver, 50);
+            }
         } else if (locator.contains("[") || Character.toString(locator.charAt(0)).contains(".")) {
-            driver.findElement(By.cssSelector(locator)).sendKeys(nompopulation);
+            for (int i = 0; i < nompopulation.length(); i++) {
+                driver.findElement(By.cssSelector(locator)).sendKeys(Character.toString(nompopulation.charAt(i)));
+                action.pause(driver, 50);
+            }
         } else {
-            driver.findElement(By.id(locator)).sendKeys(nompopulation);
+            for (int i = 0; i < nompopulation.length(); i++) {
+                driver.findElement(By.id(locator)).sendKeys(Character.toString(nompopulation.charAt(i)));
+                action.pause(driver, 50);
+            }
         }
 
 
@@ -528,12 +539,12 @@ public class EtapesCommunes {
             L = driver.findElements(By.id(locator));
         }
 
-        boolean  elementExiste=false;
+        boolean elementExiste = false;
 
         for (WebElement x : L) {
             actions.moveToElement(x).perform();
             if (x.getAttribute("title").equals(Optiondelaliste)) {
-                elementExiste=true;
+                elementExiste = true;
                 logger.info("Element trouvé ");
                 break;
             }
@@ -545,8 +556,7 @@ public class EtapesCommunes {
     }
 
 
-
-    }
+}
 
 
 
