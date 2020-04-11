@@ -50,6 +50,7 @@ Feature: Gestion du personnel
     And l utilisateur clique sur "Enregistrer_Collaborateur"
     And vérifier que le message "Opération effectuée avec succès" s affiche
     And wait 8000
+    And l'utilisateur rafraichit la page
 
      # Etape 5 : Affectation du véhicule
     And l utilisateur saisit "Collaborateur Véhicule Non Autorisé" dans le champs "Recherche_Collaborateur"
