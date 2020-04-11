@@ -56,15 +56,15 @@ Feature: Gestion du personnel
     And wait 2000
     And l utilisateur selectionne "Collaborateur Véhicule" dans la liste "Liste_Collaborateurs"
     And l utilisateur clique sur "Onglet_Rénumération"
-    And wait 1000
+    And wait 2000
     And l utilisateur clique sur "Bouton_Ajouter_Affectation_Véhicule"
-    And wait 1000
+    And wait 2000
     And l utilisateur selectionne "200 TU 2200" dans la liste deroulante "Liste_Immatriculation"
-    And wait 1000
+    And wait 2000
     And l utilisateur saisit "02/03/2020" dans le champs "Début_Usage_Véhicule"
     And wait 5000
     And l utilisateur saisit "15/03/2020" dans le champs "Fin_Usage_Véhicule"
-    And wait 1000
+    And wait 2000
     And l utilisateur clique sur "Bouton_Valider_Affecatation_Véhicule"
     And wait 3000
     And l utilisateur clique sur "Bouton_Enregistrer_Modification"
