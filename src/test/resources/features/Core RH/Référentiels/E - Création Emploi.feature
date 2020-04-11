@@ -32,9 +32,11 @@ Feature: Référentiels
     # And l utilisateur selectionne "Actif" dans la liste deroulante "Statut_emploi"
     And l utilisateur clique sur "Enregistrer_Emploi"
     And vérifier que le message "Opération effectuée avec succès" s affiche
+    And wait 2000
 
     # Etape 4 : Ajout d'une compétence
     When l utilisateur clique sur "Exigences_Emploi"
+    And wait 2000
     And l utilisateur clique sur "Ajouter_competence_Emploi"
     And l utilisateur selectionne "Change Management" dans la liste deroulante "Compétence_emploi"
     And l utilisateur selectionne "3" dans la liste deroulante "Niveau_compétence_emploi"
