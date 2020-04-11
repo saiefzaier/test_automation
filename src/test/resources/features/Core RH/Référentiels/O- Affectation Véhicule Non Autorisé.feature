@@ -46,7 +46,7 @@ Feature: Gestion du personnel
     And l utilisateur selectionne "DFG_Direction" dans la liste deroulante "Emploi_collaborateur"
     And l utilisateur selectionne "DFG_Responsable recrutement" dans la liste deroulante "Poste_collaborateur"
     And l utilisateur selectionne "Contrat à durée indéterminée" dans la liste deroulante "Type_du_contrat_collaborateur"
-   #   And l utilisateur saisit "01/01/2019" dans le champs "Date de début du contrat"
+    And l utilisateur modifie "01/01/2019" dans le champs "Date de début du contrat"
     And l utilisateur clique sur "Enregistrer_Collaborateur"
     And vérifier que le message "Opération effectuée avec succès" s affiche
     And wait 8000
