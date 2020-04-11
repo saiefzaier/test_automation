@@ -15,7 +15,7 @@ Feature: Gestion du personnel
 
      # Etape 1 : Connexion :
     Given le navigateur est ouvert et la page d'acceuil est affichée
-    And l'utilisateur "responsable@yopmail.com" est connecté
+    And l'utilisateur "admin@accretio.io" est connecté
 
     # Etape 2 : Accès à l'espace RH
 
