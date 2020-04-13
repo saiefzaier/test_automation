@@ -257,6 +257,7 @@ public class EtapesCommunes {
                 } catch (StaleElementReferenceException ignored) {
                 }
             } else {
+                actions.moveToElement(driver.findElement(By.xpath(locator))).perform();
                 action.pause(driver,2000);
                 driver.findElement(By.xpath(locator)).click();
                 x = false;
