@@ -23,6 +23,7 @@ Feature: Gestion du personnel
     And l utilisateur clique sur "Bouton_Menu_Etendu"
     And l utilisateur clique sur "Core_RH"
     And l utilisateur clique sur "Gestion_du_personnel"
+    And wait 7000
 
  # Etape 3 : Embauche d'un nouveau collaborateur
     ## Première popup d'embauche ##
