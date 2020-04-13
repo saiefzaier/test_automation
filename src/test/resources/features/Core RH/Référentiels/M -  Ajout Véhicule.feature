@@ -27,8 +27,6 @@ Feature: Référentiels
     And wait 2000
     And l utilisateur selectionne "Collection" dans la liste "Liste_Configuration"
     And wait 3000
-    And l utilisateur saisit "Marque de véhicule" dans le champs "Recherche_Collection"
-    And wait 3000
     And l utilisateur selectionne "Marque de véhicule" dans la liste "Liste_Collections"
     And wait 3000
     And l utilisateur saisit "ford" dans le champs "Code_Marque"
@@ -42,8 +40,6 @@ Feature: Référentiels
     And wait 3000
 
      # Etape 3 : Ajout modèle
-    And l utilisateur modifie "Modèle de véhicule" dans le champs "Recherche_Collection"
-    And wait 3000
     And l utilisateur selectionne "Modèle de véhicule" dans la liste "Liste_Collections"
     And wait 3000
     And l utilisateur clique sur "Bouton_Ajouter_Modèle"

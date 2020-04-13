@@ -55,6 +55,8 @@ Feature: Gestion du personnel
 
     # Etape 5 : Affectation du véhicule
 
+    And wait 3000
+    And l utilisateur saisit "Collaborateur Véhicule" dans le champs "Recherche_Collaborateur"
     And wait 5000
     And l utilisateur selectionne "Collaborateur Véhicule" dans la liste "Liste_Collaborateurs"
     And wait 6000

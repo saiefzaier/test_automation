@@ -307,7 +307,7 @@ public class EtapesCommunes {
 
         for (WebElement x : L) {
             actions.moveToElement(x).perform();
-            if (x.getText().equals(Optiondelaliste)) {
+            if (x.getText().contains(Optiondelaliste)) {
                 x.click();
                 break;
             }
