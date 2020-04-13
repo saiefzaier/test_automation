@@ -54,14 +54,14 @@ Feature: Gestion du personnel
     And l'utilisateur rafraichit la page
 
      # Etape 5 : Affectation du véhicule
-    And l utilisateur saisit "Collaborateur Véhicule Non Autorisé" dans le champs "Recherche_Collaborateur"
-    And wait 3000
+
+    And wait 5000
     And l utilisateur selectionne "Collaborateur Véhicule Non Autorisé" dans la liste "Liste_Collaborateurs"
-    And wait 3000
+    And wait 6000
     And l utilisateur clique sur "Onglet_Rénumération"
-    And wait 3000
+    And wait 6000
     And l utilisateur clique sur "Bouton_Ajouter_Affectation_Véhicule"
-    And wait 3000
+    And wait 4000
     And l utilisateur selectionne "200 TU 2200" dans la liste deroulante "Liste_Immatriculation"
     And wait 3000
     And l utilisateur saisit "01/03/2020" dans le champs "Début_Usage_Véhicule"
