@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 @CucumberOptions(
         features = {"src/test/resources/features/"},
         plugin = {"json:target/reports/cucumber.json"},
-        tags = {"@ACCRETIO2-CORERH"},
+        tags = {"@ACCRETIO2-REFERENTIELS-0012 or @ACCRETIO2-GESTIONDUPERSONNEL-002 or @ACCRETIO2-GESTIONDUPERSONNEL-003'"},
         monochrome = true,
         glue = {"com.QA.steps"}
 )
