@@ -281,10 +281,12 @@ public class EtapesCommunes {
 
 
     @And("l utilisateur selectionne {string} dans la liste {string}")
-    public void lUtilisateurSelectionneDansLaListe(String Optiondelaliste, String liste) throws IllegalAccessException {
+    public void lUtilisateurSelectionneDansLaListe(String Optiondelaliste, String liste) throws IllegalAccessException, InterruptedException {
         logger.info("L'utilisateur selectionne : " + Optiondelaliste + " dans la liste : " + liste);
         String locator = "vide";
         List<WebElement> L;
+        List<WebElement> L1;
+        boolean state = true;
         for (List<Field> f : ListeGlobaleLocators) {
             for (Field x : f) {
                 if (x.getName().equals(liste)) {
@@ -305,12 +307,25 @@ public class EtapesCommunes {
             L = driver.findElements(By.id(locator));
         }
 
-        for (WebElement x : L) {
-            actions.moveToElement(x).perform();
-            if (x.getText().contains(Optiondelaliste)) {
-                x.click();
-                break;
+        while (state) {
+            for (WebElement x : L) {
+                actions.moveToElement(x).perform();
+                if (x.getText().contains(Optiondelaliste)) {
+                    x.click();
+                    state = false;
+                    break;
+                }
             }
+            action.pause(driver,2000);
+            if (Character.toString(locator.charAt(0)).contains("/")) {
+                L1 = driver.findElements(By.xpath(locator));
+            } else if (locator.contains("[") || Character.toString(locator.charAt(0)).contains(".")) {
+                L1 = driver.findElements(By.cssSelector(locator));
+            } else {
+                L1 = driver.findElements(By.id(locator));
+            }
+            if (L1.size() > L.size()){ L = L1;}
+            else {state = false;}
         }
     }
 
