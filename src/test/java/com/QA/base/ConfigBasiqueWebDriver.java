@@ -90,7 +90,7 @@ public class ConfigBasiqueWebDriver {
                     ChromeOptions optionsCh = new ChromeOptions();
                     //optionsCh.addArguments("--headless");
                     optionsCh.addArguments("start-maximized");
-                    optionsCh.addArguments("--window-size=1366,768");
+                    optionsCh.addArguments("--window-size=1920,1080");
                     optionsCh.addArguments("enable-automation");
                     optionsCh.addArguments("--no-sandbox");
                     optionsCh.addArguments("--disable-infobars");
