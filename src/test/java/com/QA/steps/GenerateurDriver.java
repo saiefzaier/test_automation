@@ -1,7 +1,6 @@
 package com.QA.steps;
 
 import com.QA.base.ConfigBasiqueWebDriver;
-import com.QA.base.streams;
 import cucumber.api.java.After;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.Before;
@@ -9,7 +8,6 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-
 
 
 public class GenerateurDriver {
@@ -42,6 +40,7 @@ public class GenerateurDriver {
         if (restartSession){
             driver.close();
             driver = null;
+            ConfigBasiqueWebDriver.driver = null;
             restartSession = false;
         }
     }

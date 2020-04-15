@@ -23,6 +23,7 @@ Feature: Référentiels
     When l utilisateur clique sur "Bouton_Role_RH"
     And l utilisateur clique sur "Bouton_Menu_Etendu"
     And l utilisateur clique sur "Core_RH"
+    And wait 3000
     And l utilisateur clique sur "Configuration_Core_RH"
     And wait 2000
     And l utilisateur selectionne "Collection" dans la liste "Liste_Configuration"
