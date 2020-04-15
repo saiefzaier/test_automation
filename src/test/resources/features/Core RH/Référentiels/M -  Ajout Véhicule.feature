@@ -83,3 +83,5 @@ Feature: Référentiels
     And wait 3000
     And l utilisateur clique sur "Bouton_Enregistrer_Ajout_Véhicule"
     And vérifier que le message "Opération effectuée avec succès" s affiche
+    And wait 2000
+    Then l utilisateur ferme la fenetre du navigateur

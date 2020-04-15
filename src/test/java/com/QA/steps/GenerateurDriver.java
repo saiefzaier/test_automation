@@ -17,6 +17,7 @@ public class GenerateurDriver {
     private static final Logger logger = Logger.getLogger(GenerateurDriver.class);
     private static Scenario scenario;
     public static WebDriver driver = null;
+    public static boolean restartSession = false;
 
 
     @Before
@@ -38,7 +39,11 @@ public class GenerateurDriver {
         }
         logger.info("Fin scénario " + scenario.getName());
         driver.manage().deleteAllCookies();
-        driver.get(streams.readers().getProperty("testsiteurl"));
+        if (restartSession){
+            driver.close();
+            driver = null;
+            restartSession = false;
+        }
     }
 
 }

@@ -2,6 +2,7 @@ package com.QA.steps;
 
 import com.QA.base.streams;
 import com.QA.locators.CommonLocators;
+import com.QA.locators.GestionDuPersonnel;
 import com.QA.utilités.XMLUtilities;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -573,6 +574,101 @@ public class EtapesCommunes {
     }
 
 
+    @And("l utilisateur  {string} l'option {string}")
+    public void lUtilisateurActiveDésactiveLOption(String choix, String option) throws IllegalAccessException {
+        logger.info("L'utilisateur "+choix+" l'option "+option);
+        String locator = "vide";
+        listededonnees.add(option);
+        listededonnees.add(choix);
+        // The element to be activated / deactivated must have the "checked" property when inspected
+        for (List<Field> f : ListeGlobaleLocators) {
+            for (Field x : f) {
+                if (x.getName().equals(option)) {
+                    locator = (String) x.get(x);
+                    break;
+                }
+            }
+            if (!locator.equals("vide")) {
+                break;
+            }
+        }
+        // The click on the element is only feasible with the use of javascript
+        Boolean optionChecked;
+        if (option.contains("JS_")) {
+            WebElement elementChoix = driver.findElement(By.xpath(locator));
+            optionChecked = elementChoix.isSelected();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            if ((choix.equals("active") && !optionChecked) || (choix.equals("désactive") && optionChecked)) {
+                executor.executeScript("arguments[0].click();", elementChoix);
+            }
+        }
+    }
+
+    @And("vérifier que l element {string} n est pas affiché")
+    public void vérifierQueLElementNEstPasAffiché(String element) throws IllegalAccessException {
+        logger.info("vérifier que l'élement "+element+" est affiché");
+        String locator = "vide";
+        for (List<Field> f : ListeGlobaleLocators) {
+            for (Field x : f) {
+                if (x.getName().equals(element)) {
+                    locator = (String) x.get(x);
+                    break;
+                }
+            }
+            if (!locator.equals("vide")) {
+                break;
+            }
+        }
+        Boolean elementAffiché;
+        try {
+            WebElement element1=(new WebDriverWait(driver,20)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+            elementAffiché=true;
+        } catch (NoSuchElementException | TimeoutException e) {
+            elementAffiché=false;
+        }
+        Assert.assertFalse(elementAffiché);
+
+
+    }
+
+    @And("vérifier que l' element {string} est affiché")
+    public void vérifierQueLElementEstAffiché(String element) throws IllegalAccessException {
+        logger.info("vérifier que l'élement "+element+" n'est pas affiché");
+        String locator = "vide";
+        for (List<Field> f : ListeGlobaleLocators) {
+            for (Field x : f) {
+                if (x.getName().equals(element)) {
+                    locator = (String) x.get(x);
+                    break;
+                }
+            }
+            if (!locator.equals("vide")) {
+                break;
+            }
+        }
+        Boolean elementAffiché;
+        try {
+            WebElement element1=(new WebDriverWait(driver,20)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+            elementAffiché=true;
+        } catch (NoSuchElementException | TimeoutException e) {
+            elementAffiché=false;
+        }
+
+        Assert.assertTrue(elementAffiché);
+
+    }
+    @And("verifier que la recherche est KO")
+    public void verifierQueLaRechercheEstKO() {
+        logger.info("verifier que la recherche du collaborateur inactif est KO");
+        WebElement Recherche_KO=(new WebDriverWait(driver,10)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(GestionDuPersonnel.Recherche_KO)));
+        Assert.assertTrue(Recherche_KO.isDisplayed());
+    }
+
+    @Then("l utilisateur ferme la fenetre du navigateur")
+    public void lUtilisateurFermeLaFenetreDuNavigateur() {
+        logger.info("Fermeture de la fenêtre actuelle du navigateur");
+        GenerateurDriver.restartSession = true;
+    }
 }
 
 
