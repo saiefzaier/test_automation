@@ -657,12 +657,6 @@ public class EtapesCommunes {
         Assert.assertTrue(elementAffiché);
 
     }
-    @And("verifier que la recherche est KO")
-    public void verifierQueLaRechercheEstKO() {
-        logger.info("verifier que la recherche du collaborateur inactif est KO");
-        WebElement Recherche_KO=(new WebDriverWait(driver,10)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(GestionDuPersonnel.Recherche_KO)));
-        Assert.assertTrue(Recherche_KO.isDisplayed());
-    }
 
     @Then("l utilisateur ferme la fenetre du navigateur")
     public void lUtilisateurFermeLaFenetreDuNavigateur() {
