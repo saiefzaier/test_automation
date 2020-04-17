@@ -30,7 +30,6 @@ import java.util.stream.Collectors;
 public class TestGenerateurDriverInit {
 
     private static final Logger logger = Logger.getLogger(TestGenerateurDriverInit.class);
-    public static List<List<Field>> ListeGlobaleLocators = new ArrayList<>();
 
     @BeforeClass
     public static void SetupClass() {
@@ -45,7 +44,6 @@ public class TestGenerateurDriverInit {
     @AfterClass
     public static void TearDown() {
        logger.info("Fin des tests, fermeture du navigateur et génération des rapports");
-       ListeGlobaleLocators.clear();
        GenerateurDriver.driver.quit();
     }
 
