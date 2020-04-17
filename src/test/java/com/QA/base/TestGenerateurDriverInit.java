@@ -3,7 +3,6 @@ package com.QA.base;
 
 
 
-import com.QA.locators.*;
 import com.QA.steps.GenerateurDriver;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -25,8 +24,6 @@ import java.util.stream.Collectors;
 @CucumberOptions(
         features = {"src/test/resources/features/"},
         plugin = {"json:target/reports/cucumber.json"},
-        tags = {"@ACCRETIO2-CORERH or @ACCRETIO2-CONNECT or @ACCRETIO2-TALENT"},
-        monochrome = true,
         glue = {"com.QA.steps"}
 )
 
@@ -40,22 +37,7 @@ public class TestGenerateurDriverInit {
         BasicConfigurator.configure();
         Logger.getRootLogger().setLevel(Level.INFO);
         logger.info("Configuration de l'environnement de test");
-        ListeGlobaleLocators.add(Arrays.stream(CommonLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(NewsLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(AnnoncesLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(RecrutementLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(ReferentielsLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(TimelineLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(GestionDuPersonnel.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(SondageLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(AbcencesLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(EnqueteLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(IdeationLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(OnboardingLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(ConfigurationTalentLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(LiensUtilesLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(AnniversaireLocators.class.getFields()).collect(Collectors.toList()));
-        ListeGlobaleLocators.add(Arrays.stream(ConfiguartionCoreRHLocators.class.getFields()).collect(Collectors.toList()));
+
 
         logger.info("Configuration terminée");
     }
