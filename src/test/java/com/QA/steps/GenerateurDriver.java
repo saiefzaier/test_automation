@@ -24,6 +24,7 @@ public class GenerateurDriver {
         if (driver == null) {
             driver = ConfigBasiqueWebDriver.get();
         }
+        EtapesCommunes.listededonnees.clear();
         logger.info("Début scénario " + scenario.getName());
 
     }

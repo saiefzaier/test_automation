@@ -7,26 +7,17 @@ selenium-hub:
 
 selenium-chrome-1:
   restart: always
-  image: selenium/node-chrome-debug
+  image: selenium/node-chrome
   ports:
-    - "5900:5900"
+    - "5000:5000"
   stdin_open: true
   links:
     - selenium-hub:hub
-
-
-selenium-chrome-2:
-  restart: always
-  image: selenium/node-chrome-debug
-  ports:
-    - "5901:5900"
-  stdin_open: true
-  links:
-    - selenium-hub:hub
-
 
 selenium-firefox:
   restart: always
-  image: selenium/node-firefox-debug
+  image: selenium/node-firefox
+  ports:
+    - "6000:6000"
   links:
     - selenium-hub:hub
